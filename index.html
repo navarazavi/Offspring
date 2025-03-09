@@ -22,11 +22,14 @@
             margin: auto;
             line-height: 1.6;
         }
-        img {
-    width: 80%; /* Makes it scale with the screen */
-    max-width: 600px; /* Prevents it from getting too big */
-    margin-top: 20px;
+img {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    height: auto; /* Ensures proper aspect ratio */
+    margin: 20px auto; /* Centers the image */
 }
+
         .footer {
             margin-top: 50px;
             font-size: 0.9em;
