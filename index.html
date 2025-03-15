@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Intelligent Fertility Insights</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
@@ -12,52 +15,55 @@
             padding: 40px;
             color: #1d1d1f;
         }
-        h1 {
+
+        h1, p {
             font-weight: 700;
-            font-size: 2.5em;
+            font-size: 2rem;
         }
-        p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
-        }
-        img {
-            display: block;
-            width: 100%; /* Expands image to full container width */
-            max-width: 1200px; /* Doubles the size but prevents it from being too large */
-            height: auto; /* Keeps proper aspect ratio */
-            margin: 20px auto; /* Centers the image */
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #6e6e73;
-        }
+
         #stuResponse {
+            font-family: 'Fira Code', monospace; /* Fira Code font */
+            color: #3A3A3C; /* Steel grey */
             font-size: 1.2em;
             margin-top: 20px;
-            color: #4CAF50;
+            padding: 10px;
+            background-color: #f0f0f5; /* Light background */
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #3F7CAC;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2a5c74;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body>
-   <h2 style="font-size: 2em; font-weight: 600; color: #1d1d1f; margin-bottom: 20px;">
-    Welcome.
-</h2>
 
+<body>
+    <h2>Welcome</h2>
     <img src="https://navarazavi.github.io/Offspring/image.png" alt="Offspring Mockup" width="800" height="auto">
-    <p>The next generation of fertility tracking, leveraged by the Apple ecosystem. </p>
+    <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
     <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
     <p><a href="business-plan.html">  Read the Full Business Plan</a></p>
-    <p class="footer">Designed for Apple Health. </p>
+    <p class="footer">Designed for Apple Health.</p>
 
-    <h3>Ask Stu about your fertility:</h3>
-    <input type="text" id="userInput" placeholder="What's your question?" />
-    <button id="submitBtn">Ask Stu</button>
-    <p id="stuResponse"></p> <!-- Stu's response will appear here -->
+    <div>
+        <input type="text" id="userInput" placeholder="Ask Stu a question" />
+        <button id="submitBtn">Ask Stu</button>
+    </div>
 
-    <!-- Add the script tag just before closing the body tag -->
+    <div id="stuResponse"></div> <!-- Stu's response will appear here -->
+
     <script src="main/app.js" defer></script>
 </body>
 </html>
+
