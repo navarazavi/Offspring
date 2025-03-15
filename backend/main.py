@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from stu import stu_chatbot
+from backend.stu import stu_chatbot  # Corrected import to reflect directory structure
 
 app = Flask(__name__)
 
@@ -12,3 +12,4 @@ def ask_stu():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
+
