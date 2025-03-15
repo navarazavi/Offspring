@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS  # <-- Added for CORS support
-from stu import stu_chatbot
+from backend.stu import stu_chatbot
 
 app = Flask(__name__)
 CORS(app)  # <-- This enables CORS for all routes
