@@ -71,14 +71,22 @@
             color: #333;
         }
 
-        /* Display response from Stu */
-        #stuResponse {
+        /* Stu Response Box Styling */
+        .stu-response {
             margin-top: 20px;
+            font-family: "Fira Code", monospace;
             font-size: 1.2em;
+            background-color: #f8f9fa;
             color: #333;
-            font-style: italic;
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
         }
 
+        /* Footer Section */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -103,13 +111,15 @@
     <!-- Stu Image (Centered and Size Increased by 120%) -->
     <img src="stu.png" alt="Stu" class="stu-img">
 
-    <!-- Display Stu's response here -->
-    <div id="stuResponse"></div>
-
     <!-- Chatbot Input Section -->
     <div class="button-container">
         <input type="text" id="userInput" placeholder="What's my fertility window?">
         <button id="submitBtn">Ask Stu</button>
+    </div>
+
+    <!-- Stu's Response (Rounded Box Below Buttons) -->
+    <div id="stuResponse" class="stu-response">
+        <!-- Stu's response will be displayed here -->
     </div>
 
     <!-- Footer -->
