@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
-from backend.stu import stu_chatbot  # Corrected import to reflect directory structure
+from flask_cors import CORS  # <-- Added for CORS support
+from stu import stu_chatbot
 
 app = Flask(__name__)
+CORS(app)  # <-- This enables CORS for all routes
 
 @app.route('/ask_stu', methods=['POST'])
 def ask_stu():
