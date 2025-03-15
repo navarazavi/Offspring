@@ -5,163 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Intelligent Fertility Insights</title>
     <style>
-        /* Global style */
+        /* General Body Styles */
         body {
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
-            background: linear-gradient(180deg, #f9f9f9 0%, #e5e5e9 100%);
-            color: #1d1d1f;
-            padding: 10px 5%;
+            font-family: "SF Pro Text", sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            color: #333;
+            padding: 20px;
+            text-align: left;
             margin: 0;
         }
 
-        /* Title for main section */
-        h1 {
-            font-size: 2.5em;
-            font-weight: normal;
-            text-align: left;
-            margin-bottom: 15px;
-            color: #333;
-            margin-left: 0;
-        }
-
-        /* Header Image - More left-aligned and 40% larger */
-        .header-image {
+        /* Title image */
+        .title-img {
             width: 100%;
-            height: auto;
-            display: block;
-            margin-left: 0; 
-            margin-top: 20px;
-        }
-
-        /* Watch Image - Centered and 40% larger */
-        .watch-image {
-            width: 84%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
-        /* Text paragraphs */
-        p {
-            font-size: 1.1em;
-            font-weight: normal;
-            color: #555;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        /* Button style */
-        button {
-            background-color: #b0b0b0;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 1.1em;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #8d8d8d;
-        }
-
-        /* Input box style */
-        input[type="text"] {
-            border: 2px solid #b0b0b0;
-            border-radius: 10px;
-            padding: 10px 20px;
-            font-size: 1.1em;
-            width: 70%;
-            max-width: 400px;
-            margin-top: 20px;
-            background-color: #fafafa;
-        }
-
-        /* Stu's response style - No box around it */
-        #stuResponse {
-            font-family: 'Fira Code', monospace;
-            font-size: 1.1em;
-            color: #444;
-            display: inline-block;
-            padding: 10px 20px;
-            background: none;
-            border: none;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        /* Footer section */
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #6e6e73;
-            text-align: center;
-        }
-
-        /* Read Business Plan link */
-        a {
-            color: #5c5c8b;
-            text-decoration: none;
-            font-weight: normal;
-        }
-
-        a:hover {
-            color: #404070;
-        }
-
-        /* Styling for the container */
-        .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 20px;
+            display: block;
         }
 
-        /* Heading for the response field */
-        .response-heading {
-            margin-top: 20px;
+        /* Middle Image - WatchPage */
+        .watchpage-img {
+            width: 40%; /* Increased the size by 19% */
+            margin: 30px auto;
+            display: block;
+        }
+
+        /* Button Section */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            margin: 5px;
+        }
+
+        input {
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #6c757d;
+            color: white;
+            width: 120px;
+            cursor: pointer;
+        }
+
+        /* Text Section Above the Button */
+        .chatbot-intro {
+            text-align: left;
+            margin: 20px 0;
             font-size: 1.2em;
             color: #333;
         }
 
-        /* New image above the button */
-        .stu-image {
-            width: 80px; /* Adjust size */
-            height: auto;
-            display: inline-block;
-            margin-bottom: 20px;
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header Image with Transparent Background -->
-        <img src="titleOffS.png" alt="Offspring Header Image" class="header-image">
+    <!-- Title Image -->
+    <img src="titleOffS.png" alt="Offspring Title" class="title-img">
 
-        <!-- New Image after the header image, centered and 40% larger -->
-        <img src="WatchPage.png" alt="Watch Page Image" class="watch-image">
+    <!-- Watch Page Image (Updated Size and Centered) -->
+    <img src="WatchPage.png" alt="Watch Page" class="watchpage-img">
 
-        <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
-        <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
-        <p><a href="business-plan.html">Read the full specs </a></p>
-
-        <!-- New Image above the button, left aligned -->
-        <div>
-            <img src="stu.png" alt="Stu" class="stu-image">
-            <input type="text" id="userInput" placeholder="What's my fertility window?" />
-            <button id="submitBtn">Ask Stu</button>
-        </div>
-
-        <div id="stuResponse"></div>
-
-        <footer>Designed for Apple Health.</footer>
+    <!-- Text Above the Chatbot -->
+    <div class="chatbot-intro">
+        <p>Meet Stu, your friendly reproductive friend! <br>Try asking Stu a question ↴</p>
     </div>
 
-    <script src="main/app.js" defer></script>
+    <!-- Chatbot Input Section -->
+    <div class="button-container">
+        <input type="text" id="userInput" placeholder="What's my fertility window?">
+        <button id="submitBtn">Ask Stu</button>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer">Designed for Apple Health</p>
+
+    <script src="main/app.js"></script>
 </body>
 </html>
+
 
 
     <script src="main/app.js" defer></script>
