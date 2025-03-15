@@ -9,7 +9,7 @@ class StuTheStork:
                 "Hi, I'm Stu. Let's talk fertility tracking!"
             ],
             "encouragement": [
-                "I know this journey can be hard, but you're doing your best. 💙",
+                "I know this journey can be hard, but you're doing your best.",
                 "You're not broken—fertility is complex, and I'm here to help track what we can.",
                 "Small changes can make a big impact. Let’s look at your data together."
             ],
@@ -29,7 +29,20 @@ class StuTheStork:
         """Returns a response based on the requested category."""
         return random.choice(self.responses.get(category, ["I'm not sure how to help with that, but let's track what we can!"]))
 
-# Example usage
-if __name__ == "__main__":
+# Function to integrate with main.py
+def stu_chatbot(user_input):
+    """Maps user input to predefined categories."""
     stu = StuTheStork()
-    print(stu.get_response("greeting"))  # Testing the chatbot
+
+    # Basic keyword matching
+    if any(word in user_input.lower() for word in ["hi", "hello", "hey"]):
+        return stu.get_response("greeting")
+    elif any(word in user_input.lower() for word in ["struggling", "broken", "help", "hard"]):
+        return stu.get_response("encouragement")
+    elif any(word in user_input.lower() for word in ["cycle", "ovulation", "fertile", "window"]):
+        return stu.get_response("cycle_tracking")
+    elif any(word in user_input.lower() for word in ["doctor", "consult", "specialist"]):
+        return stu.get_response("consultation")
+    
+    return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+
