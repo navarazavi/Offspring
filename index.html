@@ -4,96 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Intelligent Fertility Insights</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text&display=swap" rel="stylesheet">
-
     <style>
-        /* Vertical gradient from white to light steel grey */
+        /* Global style */
         body {
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-            background: linear-gradient(to bottom, #f7f7f7, #e1e8f0); /* Vertical gradient */
-            text-align: center;
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
+            background: linear-gradient(180deg, #f9f9f9 0%, #e5e5e9 100%); /* Subtle vertical gradient */
+            text-align: left; /* Left align text */
             padding: 40px;
             color: #1d1d1f;
-            min-height: 100vh;
+            margin: 0;
         }
 
-        h1, p {
-            font-size: 1.2rem; /* Reduced font size for subtler look */
+        /* Offspring Title */
+        #title {
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
+            font-size: 3em;  /* Large font size */
+            font-weight: bold;  /* Bold text */
+            text-align: left;  /* Left aligned */
+            color: #333;  /* Dark grey color */
+            margin-top: 20px;  /* Space at the top */
+        }
+
+        /* Title style for "Meet Stu" */
+        h1 {
+            font-size: 2.5em; /* Adjusted for title prominence */
+            font-weight: normal;
+            text-align: center; /* Keep this centered */
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Section title */
+        h2 {
+            font-size: 1.6em; /* Slightly smaller font size */
+            font-weight: normal;
+            color: #333;
             margin-bottom: 20px;
         }
 
-        #stuResponse {
-            font-family: 'Fira Code', monospace;
-            color: #3A3A3C; /* Steel grey */
-            font-size: 1.1em;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f5;
-            border-radius: 8px;
+        /* Text paragraphs */
+        p {
+            font-size: 1.1em; /* Smaller font size */
+            font-weight: normal;
+            color: #555; /* Slightly softer gray */
+            margin-bottom: 20px;
+            text-align: left;
         }
 
-        input[type="text"], button {
-            padding: 12px 20px;
-            font-size: 16px;
-            width: 300px;
-            border-radius: 30px;
-            border: 2px solid #ccc;
-            outline: none;
-            margin-top: 20px;
-        }
-
-        input[type="text"]:focus, button:focus {
-            border-color: #6A82FB;
-        }
-
+        /* Button style */
         button {
-            background-color: #3F7CAC;
+            background-color: #b0b0b0; /* Stone grey */
+            border: none;
             color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.1em; /* Smaller size */
+            border-radius: 10px; /* Rounded square edges */
             cursor: pointer;
             margin-top: 10px;
         }
 
         button:hover {
-            background-color: #2a5c74;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #8d8d8d; /* Slightly darker grey on hover */
         }
 
-        .footer {
-            margin-top: 50px;
+        /* Input box style */
+        input[type="text"] {
+            border: 2px solid #b0b0b0; /* Stone grey */
+            border-radius: 10px; /* Rounded square edges */
+            padding: 10px 20px;
+            font-size: 1.1em; /* Smaller size */
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            background-color: #fafafa;
+        }
+
+        /* Stu's response style - No box around it */
+        #stuResponse {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.1em;
+            color: #444;
+            display: inline-block;
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            margin-top: 20px;
+            text-align: left; /* Align left */
+        }
+
+        /* Footer section */
+        footer {
+            margin-top: 30px;
             font-size: 0.9em;
             color: #6e6e73;
         }
 
-        /* Image styling */
-        img {
-            display: block;
-            margin: 20px auto;
-            width: 100%;
-            max-width: 800px;
-            height: auto;
+        /* Read Business Plan link */
+        a {
+            color: #5c5c8b;
+            text-decoration: none;
+            font-weight: normal; /* No bold */
+        }
+
+        a:hover {
+            color: #404070;
+        }
+
+        /* Styling for the container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Heading for the response field */
+        .response-heading {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
         }
     </style>
 </head>
-
 <body>
-    <!-- Image of Offspring -->
-    <img src="https://navarazavi.github.io/Offspring/image.png" alt="Offspring Mockup">
 
-    <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
-    <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
-    <p><a href="business-plan.html">  Read the Full Business Plan</a></p>
-    <p class="footer">Designed for Apple Health.</p>
+    <div class="container">
+        <!-- Main Title -->
+        <h1>Meet Stu, the fertility stork.</h1>
 
-    <!-- Ask Stu section with a more subtle design -->
-    <div>
-        <input type="text" id="userInput" placeholder="Ask Stu a question" />
-        <button id="submitBtn">Ask Stu</button>
+        <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
+        <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
+        <p><a href="business-plan.html">  Read the Full Business Plan</a></p>
+
+        <div class="response-heading">
+            <label for="userInput">Ask Stu a question</label>
+            <input type="text" id="userInput" placeholder="What's my fertility window?" />
+            <button id="submitBtn">Ask Stu</button>
+        </div>
+
+        <div id="stuResponse"></div>
+
+        <footer>Designed for Apple Health.</footer>
     </div>
-
-    <div id="stuResponse"></div> <!-- Stu's response will appear here -->
 
     <script src="main/app.js" defer></script>
 </body>
 </html>
-
