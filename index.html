@@ -10,7 +10,7 @@
             font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
             background: linear-gradient(180deg, #f9f9f9 0%, #e5e5e9 100%);
             color: #1d1d1f;
-            padding: 20px 10px; /* Reduced padding */
+            padding: 20px 10px;
             margin: 0;
         }
 
@@ -19,60 +19,61 @@
             font-size: 2.5em; 
             font-weight: normal;
             text-align: left;
-            margin-bottom: 15px; 
+            margin-bottom: 15px;
             color: #333;
+            margin-left: 20px; /* Reduced margin */
         }
 
-        /* Header Image - More left-aligned and 33% smaller */
+        /* Header Image - More left-aligned and 40% larger */
         .header-image {
-            width: 70%; /* Made it 30% smaller */
+            width: 100%; /* Increased size */
             height: auto;
             display: block;
             margin-left: 0; 
             margin-top: 20px;
         }
 
-        /* Watch Image - Centered and a bit smaller than the title image */
+        /* Watch Image - Centered and 40% larger */
         .watch-image {
-            width: 60%; /* A bit smaller than the title image */
+            width: 84%; /* 40% larger than previous size */
             height: auto;
             display: block;
-            margin: 20px auto; /* Centered */
+            margin: 20px auto;
         }
 
         /* Text paragraphs */
         p {
-            font-size: 1.1em; 
+            font-size: 1.1em;
             font-weight: normal;
             color: #555;
-            margin-bottom: 15px; 
+            margin-bottom: 15px;
             text-align: left;
         }
 
         /* Button style */
         button {
-            background-color: #b0b0b0; 
+            background-color: #b0b0b0;
             border: none;
             color: white;
             padding: 10px 20px;
             text-align: center;
-            font-size: 1.1em; 
+            font-size: 1.1em;
             border-radius: 10px;
             cursor: pointer;
             margin-top: 10px;
         }
 
         button:hover {
-            background-color: #8d8d8d; 
+            background-color: #8d8d8d;
         }
 
         /* Input box style */
         input[type="text"] {
-            border: 2px solid #b0b0b0; 
-            border-radius: 10px; 
+            border: 2px solid #b0b0b0;
+            border-radius: 10px;
             padding: 10px 20px;
-            font-size: 1.1em; 
-            width: 70%; 
+            font-size: 1.1em;
+            width: 70%;
             max-width: 400px;
             margin-top: 20px;
             background-color: #fafafa;
@@ -102,7 +103,7 @@
         a {
             color: #5c5c8b;
             text-decoration: none;
-            font-weight: normal; 
+            font-weight: normal;
         }
 
         a:hover {
@@ -111,9 +112,9 @@
 
         /* Styling for the container */
         .container {
-            max-width: 1000px;
+            max-width: 800px; /* Reduced margin and width */
             margin: 0 auto;
-            padding: 20px; 
+            padding: 20px;
         }
 
         /* Heading for the response field */
@@ -121,6 +122,14 @@
             margin-top: 20px;
             font-size: 1.2em;
             color: #333;
+        }
+
+        /* New image above the button */
+        .stu-image {
+            width: 50px;
+            height: auto;
+            display: inline-block;
+            margin-right: 10px; /* Space between image and text */
         }
     </style>
 </head>
@@ -130,15 +139,16 @@
         <!-- Header Image with Transparent Background -->
         <img src="titleOffS.png" alt="Offspring Header Image" class="header-image">
 
-        <!-- New Image after the header image, centered and smaller -->
+        <!-- New Image after the header image, centered and 40% larger -->
         <img src="WatchPage.png" alt="Watch Page Image" class="watch-image">
 
         <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
         <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
         <p><a href="business-plan.html">Read the full specs </a></p>
 
-        <!-- Ask Stu section -->
-        <div class="response-heading">
+        <!-- New Image above the button, left aligned -->
+        <div>
+            <img src="stu.png" alt="Stu" class="stu-image">
             <input type="text" id="userInput" placeholder="What's my fertility window?" />
             <button id="submitBtn">Ask Stu</button>
         </div>
