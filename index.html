@@ -29,44 +29,22 @@
             height: auto; /* Keeps proper aspect ratio */
             margin: 20px auto; /* Centers the image */
         }
-
         .footer {
             margin-top: 50px;
             font-size: 0.9em;
             color: #6e6e73;
         }
-
-        /* Add styling for the input and button */
-        #userInput {
-            padding: 10px;
-            width: 300px;
-            font-size: 1em;
-            margin-top: 20px;
-        }
-        #submitBtn {
-            padding: 10px;
-            font-size: 1em;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #submitBtn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Style for response */
         #stuResponse {
-            margin-top: 20px;
             font-size: 1.2em;
-            color: #007bff;
+            margin-top: 20px;
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
    <h2 style="font-size: 2em; font-weight: 600; color: #1d1d1f; margin-bottom: 20px;">
     Welcome.
-   </h2>
+</h2>
 
     <img src="https://navarazavi.github.io/Offspring/image.png" alt="Offspring Mockup" width="800" height="auto">
     <p>The next generation of fertility tracking, leveraged by the Apple ecosystem. </p>
@@ -74,13 +52,12 @@
     <p><a href="business-plan.html">  Read the Full Business Plan</a></p>
     <p class="footer">Designed for Apple Health. </p>
 
-    <!-- Add input field and button for the chatbot interaction -->
-    <input type="text" id="userInput" placeholder="Ask Stu something..." />
+    <h3>Ask Stu about your fertility:</h3>
+    <input type="text" id="userInput" placeholder="What's your question?" />
     <button id="submitBtn">Ask Stu</button>
-    <div id="stuResponse"></div>
+    <p id="stuResponse"></p> <!-- Stu's response will appear here -->
 
-    <!-- Link to app.js -->
+    <!-- Add the script tag just before closing the body tag -->
     <script src="main/app.js" defer></script>
 </body>
 </html>
-
