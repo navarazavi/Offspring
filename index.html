@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Stu, the fertility stork.</title>
+    <title>Offspring – Intelligent Fertility Insights</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text&display=swap" rel="stylesheet">
 
     <style>
-        /* Subtle white to steel light grey gradient background */
+        /* Vertical gradient from white to light steel grey */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
-            background: linear-gradient(to right, #ffffff, #d1d5db); /* Subtle white to steel grey */
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            background: linear-gradient(to bottom, #f7f7f7, #e1e8f0); /* Vertical gradient */
             text-align: center;
             padding: 40px;
             color: #1d1d1f;
-            min-height: 100vh; /* Ensures the gradient covers the full page */
+            min-height: 100vh;
         }
 
         h1, p {
-            font-weight: 700;
-            font-size: 2rem;
+            font-size: 1.2rem; /* Reduced font size for subtler look */
+            margin-bottom: 20px;
         }
 
         #stuResponse {
-            font-family: 'Fira Code', monospace; /* Fira Code font */
+            font-family: 'Fira Code', monospace;
             color: #3A3A3C; /* Steel grey */
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-top: 20px;
             padding: 10px;
-            background-color: #f0f0f5; /* Light background */
+            background-color: #f0f0f5;
             border-radius: 8px;
         }
 
         input[type="text"], button {
             padding: 12px 20px;
             font-size: 16px;
-            width: 300px; /* Same width for both */
-            border-radius: 30px; /* Sleek rounded edges */
+            width: 300px;
+            border-radius: 30px;
             border: 2px solid #ccc;
             outline: none;
             margin-top: 20px;
         }
 
         input[type="text"]:focus, button:focus {
-            border-color: #6A82FB; /* Focus color */
+            border-color: #6A82FB;
         }
 
         button {
@@ -59,27 +59,33 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Additional styling for the page layout */
         .footer {
             margin-top: 50px;
             font-size: 0.9em;
             color: #6e6e73;
         }
+
+        /* Image styling */
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Updated Heading -->
-    <h2 style="font-size: 2em; font-weight: 600; color: #1d1d1f; margin-bottom: 20px;">
-        Meet Stu, the fertility stork.
-    </h2>
+    <!-- Image of Offspring -->
+    <img src="https://navarazavi.github.io/Offspring/image.png" alt="Offspring Mockup">
 
     <p>The next generation of fertility tracking, leveraged by the Apple ecosystem.</p>
     <p>Offspring integrates seamlessly with Apple Health to create more accurate, inclusive, and personalized fertility insights.</p>
     <p><a href="business-plan.html">  Read the Full Business Plan</a></p>
     <p class="footer">Designed for Apple Health.</p>
 
-    <!-- Ask Stu section with button next to the title -->
+    <!-- Ask Stu section with a more subtle design -->
     <div>
         <input type="text" id="userInput" placeholder="Ask Stu a question" />
         <button id="submitBtn">Ask Stu</button>
@@ -90,3 +96,4 @@
     <script src="main/app.js" defer></script>
 </body>
 </html>
+
