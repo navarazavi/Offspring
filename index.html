@@ -13,6 +13,7 @@
             padding: 20px;
             text-align: center;
             margin: 0;
+            position: relative;
         }
 
         /* Title image */
@@ -25,23 +26,9 @@
 
         /* Middle Image - WatchPage */
         .watchpage-img {
-            width: 67%; /* Increased the size by 19% */
+            width: 59%; /* Increased the size by 19% */
             margin: 30px auto;
             display: block;
-            animation: floatAnimation 3s ease-in-out infinite; /* Continuous floating animation */
-        }
-
-        /* Continuous Floating Effect for WatchPage Image */
-        @keyframes floatAnimation {
-            0% {
-                transform: translateY(0); /* Starting point */
-            }
-            50% {
-                transform: translateY(-15px); /* Moves up */
-            }
-            100% {
-                transform: translateY(0); /* Returns to the original position */
-            }
         }
 
         /* Stu Image */
@@ -85,21 +72,7 @@
             color: #333;
         }
 
-        /* Stu's Response Box */
-        .response-box {
-            background-color: #f5f5f7;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 30px;
-            width: 80%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: "Fira Code", monospace;
-            font-size: 1.1em;
-            color: #333;
-        }
-
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -107,15 +80,26 @@
             color: #888;
         }
 
-        /* Hover Effect for Images (For All Other Images) */
-        img {
-            transition: transform 0.3s ease-in-out; /* Add smooth transition */
+        /* Animation for the clickable icon */
+        .icon-link {
+            display: inline-block;
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            left: 10px; /* Positioning icon to the upper left */
         }
 
-        img:hover {
-            transform: scale(1.1); /* Makes the image slightly bigger on hover */
-            cursor: pointer; /* Changes cursor to pointer when hovering */
+        .animated-icon {
+            width: 60px; /* Adjust size as needed */
+            height: auto;
+            transition: transform 0.3s ease, scale 0.3s ease; /* Animation for hovering */
         }
+
+        .animated-icon:hover {
+            transform: translateY(-5px); /* Makes the icon hover upwards */
+            scale: 1.1; /* Slightly enlarge the icon on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -140,10 +124,10 @@
         <button id="submitBtn">Ask Stu</button>
     </div>
 
-    <!-- Stu's Response Box -->
-    <div class="response-box">
-        <p id="stuResponse">Ask Stu a question above!</p>
-    </div>
+    <!-- Clickable Icon for Full Details -->
+    <a href="business-plan.html" class="icon-link">
+        <img src="ReadMyS.png" alt="Full Details Icon" class="animated-icon">
+    </a>
 
     <!-- Footer -->
     <p class="footer">Designed for Apple Health.</p>
@@ -151,4 +135,5 @@
     <script src="main/app.js"></script>
 </body>
 </html>
+
 
