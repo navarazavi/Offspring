@@ -28,11 +28,16 @@
             width: 59%; /* Increased the size by 19% */
             margin: 30px auto;
             display: block;
+            transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+        }
+
+        .watchpage-img:hover {
+            transform: translateY(-10px); /* Move the image upwards */
         }
 
         /* Stu Image */
         .stu-img {
-            width: 17%; /* Increased Stu's size by 120% */
+            width: 23%; /* Increased Stu's size by 120% */
             margin: 20px auto;
             display: block;
         }
@@ -71,28 +76,25 @@
             color: #333;
         }
 
-        /* Stu Response Box Styling */
-        .stu-response {
-            margin-top: 20px;
-            font-family: "Fira Code", monospace;
-            font-size: 1.2em;
-            background-color: #f8f9fa;
-            color: #333;
-            padding: 15px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            text-align: left;
-        }
-
-        /* Footer Section */
         .footer {
             text-align: center;
             margin-top: 40px;
             font-size: 0.9em;
             color: #888;
         }
+
+        /* Stu Response Section */
+        .stu-response {
+            font-family: 'Fira Code', monospace;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            width: 80%;
+            margin: 20px auto;
+            text-align: left;
+        }
+
     </style>
 </head>
 <body>
@@ -117,10 +119,8 @@
         <button id="submitBtn">Ask Stu</button>
     </div>
 
-    <!-- Stu's Response (Rounded Box Below Buttons) -->
-    <div id="stuResponse" class="stu-response">
-        <!-- Stu's response will be displayed here -->
-    </div>
+    <!-- Stu Response Section -->
+    <div id="stuResponse" class="stu-response"></div>
 
     <!-- Footer -->
     <p class="footer">Designed for Apple Health.</p>
@@ -128,4 +128,3 @@
     <script src="main/app.js"></script>
 </body>
 </html>
-
