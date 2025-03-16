@@ -30,16 +30,31 @@
 
         /* Middle Image - WatchPage with floating effect (no scaling) */
         .watchpage-img {
-            width: 59%; /* Increased the size by 19% */
+            width: 63%; /* Increased the size by 19% */
             margin: 30px auto;
             display: block;
             position: relative;
             animation: float 1s ease-in-out infinite;
         }
 
+        /* Floating icon for DataP.png (Positioned on the right side) */
+        .data-icon {
+        position: absolute;
+        right: 20%; /* Positioned on the right side */
+        top: 25%;
+        width: 150px; /* Adjust size */
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Smooth scaling transition */
+        }
+
+        .data-icon:hover {
+        transform: scale(1.1); /* Scaling effect on hover */
+    }
+
+
         /* Stu Image */
         .stu-img {
-            width: 17%; /* Increased Stu's size by 120% */
+            width: 19%; /* Increased Stu's size by 120% */
             margin: 20px auto;
             display: block;
         }
@@ -125,6 +140,12 @@
     <div class="chatbot-intro">
         <p>Meet Stu, your friendly reproductive friend! <br>Try asking Stu a question ↴</p>
     </div>
+
+    <!-- DataP Image Link (with Hover Effect, Positioned on the Right) -->
+<a href="your-data-page-link" target="_blank">
+    <img src="DataP.png" alt="Data Page" class="data-icon">
+</a>
+
 
     <!-- Stu Image (Centered and Size Increased by 120%) -->
     <img src="stu.png" alt="Stu" class="stu-img">
