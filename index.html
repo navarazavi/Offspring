@@ -59,6 +59,18 @@
         transform: scale(1.1); /* Scaling effect on hover */
     }
 
+        /* Scaling Effect for AskStu.png */
+        .scaling-icon {
+        width: 70px; /* Adjust the initial size */
+        margin: 30px auto; /* Center the icon */
+        display: block;
+        transition: transform 0.3s ease; /* Smooth scaling effect */
+    }
+
+    .scaling-icon:hover {
+    transform: scale(1.2); /* Scale it up when hovered */
+    }
+
         /* Positioning the Dem.png image on the right */
         .dem-img {
         position: absolute; /* Use absolute positioning to place it freely */
@@ -172,6 +184,9 @@
 
     <!-- Stu Image (Centered and Size Increased by 120%) -->
     <img src="stu.png" alt="Stu" class="stu-img">
+
+    <img src="AskStu.png" alt="Ask Stu" class="scaling-icon">
+
 
     <!-- Chatbot Input Section -->
     <div class="button-container">
