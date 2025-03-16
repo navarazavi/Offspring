@@ -23,11 +23,13 @@
             display: block;
         }
 
-        /* Middle Image - WatchPage */
+        /* Middle Image - WatchPage with floating effect */
         .watchpage-img {
-            width: 59%; /* Increased the size by 19% */
+            width: 69%; /* Increased the size by 19% */
             margin: 30px auto;
             display: block;
+            position: relative;
+            animation: float 1s ease-in-out infinite;
         }
 
         /* Stu Image */
@@ -78,24 +80,31 @@
             color: #888;
         }
 
-        /* Animation for the clickable icon */
-        .icon-link {
-            display: inline-block;
-            text-decoration: none;
+        /* Floating icon */
+        .floating-icon {
             position: absolute;
-            top: 290px; /* Adjust the top position to move the icon lower */
-            left: 170px; /* Adjust the left position to move it to the left */
+            left: 10%;
+            top: 15%;
+            width: 170px;
+            cursor: pointer;
         }
 
-        .animated-icon {
-            width: 150px; /* Adjust size as needed */
-            height: auto;
-            transition: transform 0.3s ease, scale 0.3s ease; /* Animation for hovering */
+        /* Hover effect for floating icon */
+        .floating-icon:hover {
+            animation: float 1s ease-in-out infinite;
         }
 
-        .animated-icon:hover {
-            transform: translateY(-5px); /* Makes the icon hover upwards */
-            scale: 1.1; /* Slightly enlarge the icon on hover */
+        /* Animation for icon floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -104,7 +113,7 @@
     <!-- Title Image -->
     <img src="titleOffS.png" alt="Offspring Title" class="title-img">
 
-    <!-- Watch Page Image (Updated Size and Centered) -->
+    <!-- Watch Page Image (Updated Size and Centered, Floating Effect Added) -->
     <img src="WatchPage.png" alt="Watch Page" class="watchpage-img">
 
     <!-- Text Above the Chatbot (Centered) -->
@@ -121,9 +130,9 @@
         <button id="submitBtn">Ask Stu</button>
     </div>
 
-    <!-- Read My Specs Icon with Animation -->
-    <a href="your-business-plan-url" class="icon-link" target="_blank">
-        <img src="ReadMyS.png" alt="Read My Specs" class="animated-icon">
+    <!-- Read My Specs Image Link -->
+    <a href="your-full-specs-link" target="_blank">
+        <img src="ReadMyS.png" alt="Read My Specs" class="floating-icon">
     </a>
 
     <!-- Footer -->
