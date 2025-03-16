@@ -6,10 +6,11 @@
     <title>Offspring – Intelligent Fertility Insights</title>
     <style>
         
-        /* Custom Red Cursor with Hex Color #DF243B */
-        body {
-        cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zY3JlZW5zY3JpcHQtMS4wLyB3aW5kY3VzdG9tIFN0YXRlY29tcC1mdWN0aW9uLTg3N0MwQf3lpxmW2ABFj0TcTGqMwmxUe2Q=='), auto;
-        }
+       /* Set custom cursor globally with DF243B color */
+    body {
+    cursor: url('cursor.png'), auto; /* Replace with your actual path if needed */
+    }
+
 
         /* General Body Styles */
         body {
@@ -55,6 +56,19 @@
 
         .data-icon:hover {
         transform: scale(1.1); /* Scaling effect on hover */
+    }
+
+        /* Positioning the Dem.png image on the right */
+        .dem-img {
+        position: absolute; /* Use absolute positioning to place it freely */
+        right: 10px; /* Adjust this to move it further or closer to the right edge */
+        bottom: 50px; /* Adjust the vertical position */
+        width: 15%; /* Adjust size, similar to the other images */
+        transition: transform 0.3s ease; /* Smooth scaling on hover */
+    }
+
+    .dem-img:hover {
+    transform: scale(1.1); /* Scaling effect when hovered */
     }
 
 
@@ -152,6 +166,8 @@
     <img src="DataP.png" alt="Data Page" class="data-icon">
 </a>
 
+<!-- Add the Dem.png image to the body -->
+<img src="Dem.png" alt="Dem" class="dem-img">
 
     <!-- Stu Image (Centered and Size Increased by 120%) -->
     <img src="stu.png" alt="Stu" class="stu-img">
