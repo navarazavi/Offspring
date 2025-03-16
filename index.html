@@ -21,11 +21,16 @@
             max-width: 700px;
             margin: 0 auto;
             display: block;
+            transition: transform 0.3s ease; /* Added smooth scaling transition */
         }
 
-        /* Middle Image - WatchPage with floating effect */
+        .title-img:hover {
+            transform: scale(1.1); /* Title image scaling on hover */
+        }
+
+        /* Middle Image - WatchPage with floating effect (no scaling) */
         .watchpage-img {
-            width: 69%; /* Increased the size by 19% */
+            width: 59%; /* Increased the size by 19% */
             margin: 30px auto;
             display: block;
             position: relative;
@@ -80,21 +85,21 @@
             color: #888;
         }
 
-        /* Floating icon */
+        /* Floating icon for ReadMySpecs */
         .floating-icon {
             position: absolute;
             left: 10%;
             top: 15%;
-            width: 170px;
+            width: 70px;
             cursor: pointer;
+            transition: transform 0.3s ease; /* Added smooth scaling transition */
         }
 
-        /* Hover effect for floating icon */
         .floating-icon:hover {
-            animation: float 1s ease-in-out infinite;
+            transform: scale(1.1); /* Scaling effect for ReadMySpecs icon */
         }
 
-        /* Animation for icon floating */
+        /* Animation for floating effect */
         @keyframes float {
             0% {
                 transform: translateY(0);
@@ -130,7 +135,7 @@
         <button id="submitBtn">Ask Stu</button>
     </div>
 
-    <!-- Read My Specs Image Link -->
+    <!-- Read My Specs Image Link (with Hover Effect) -->
     <a href="your-full-specs-link" target="_blank">
         <img src="ReadMyS.png" alt="Read My Specs" class="floating-icon">
     </a>
@@ -141,3 +146,4 @@
     <script src="main/app.js"></script>
 </body>
 </html>
+
