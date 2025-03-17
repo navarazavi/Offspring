@@ -32,23 +32,25 @@
             transform: scale(1.1); /* Title image scaling on hover */
         }
 
-        /* Floating animation for the arm image (WatchLeft.png) */
         .watchleft-img {
-            position: absolute;
-            left: 5%; /* Adjust to position the image from the left side */
-            bottom: 0; /* Adjust to place the image at the bottom of the page */
-            width: 15%; /* Adjust the size of the image */
-            animation: float 3.3s ease-in-out infinite; /* Floating effect */
+            position: fixed; /* Keep the image fixed while scrolling */
+            left: 5.9%;
+            bottom: 0; /* Move it closer to the bottom of the screen */
+            width: 31%; /* Adjust the size as needed */
+            animation: float-left 3.3s ease-in-out infinite;
+            z-index: 10; /* Make sure it's above other content */
+        }
+        
+        /* WatchRight Image - Adjusted position and floating animation */
+        .watchright-img {
+            position: fixed;
+            right: 5.9%; /* Adjust position from right */
+            top: 0; /* Place it at the top of the page */
+            width: 31%; /* Adjust the size */
+            animation: float-right 3.3s ease-in-out infinite;
+            z-index: 10;
         }
 
-        /* Floating animation for the arm image (WatchRight.png) */
-        .watchright-img {
-            position: absolute;
-            right: 5%; /* Adjust to position the image from the right side */
-            top: 0; /* Adjust to place the image at the top of the page */
-            width: 15%; /* Adjust the size of the image */
-            animation: float-right 3.3s ease-in-out infinite; /* Floating effect */
-        }
 
         /* Middle Image - WatchPage with floating effect (no scaling) */
         .watchpage-img {
