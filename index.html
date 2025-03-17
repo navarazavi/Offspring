@@ -64,18 +64,23 @@
 }
 
 
-        /* Scaling Effect for AskStu.png */
-        .scaling-icon {
-            width: 110px; /* Adjust the initial size */
-            left: 4.5%; 
-            top: 91%; 
-            position: absolute;
-            transition: transform 0.3s ease; /* Smooth scaling effect */
-        }
+    /* Position the AskStu.png image above BigB.png */
+    .scaling-icon {
+    position: absolute; /* Position it freely on the page */
+    z-index: 10; /* Make sure it stays above BigB.png */
+    top: 85%; /* Adjust this to position it where you want */
+    left: 5%; /* Adjust as needed */
+    width: 110px; /* Adjust the size as needed */
+}
 
-        .scaling-icon:hover {
-            transform: scale(1.2); /* Scale it up when hovered */
-        }
+.bigb-img {
+    position: absolute; /* Keep it in place */
+    z-index: 1; /* Ensure it stays below AskStu.png */
+    bottom: 10%; /* Adjust this to position it where you want */
+    left: 10%; /* Adjust to suit your layout */
+    width: 150px; /* Adjust size as needed */
+}
+
 
     
         /* Fertility image */
@@ -209,18 +214,20 @@
     <!-- AskStu Image (Scaling Icon) --> 
     <!-- Removed Chatbot buttons -->
 
-    <!-- Ask Stu Icon -->
-    <a href="chatbot.html">
-    <img src="AskStu.png" alt="Ask Stu" class="scaling-icon">
-    </a>
 
     <!-- Read My Specs Image Link (with Hover Effect) -->
     <a href="your-full-specs-link" target="_blank">
         <img src="ReadMyS.png" alt="Read My Specs" class="floating-icon">
     </a>
 
-    <!-- Add the BigB image to the body -->
-    <img src="bigB.png" alt="bigB Icon" class="scaling-icon-bottom-left">
+<!-- AskStu Image (Positioned Above BigB.png) -->
+<a href="chatbot.html">
+    <img src="AskStu.png" alt="Ask Stu" class="scaling-icon">
+</a>
+
+<!-- BigB Image (Positioned Below AskStu.png) -->
+<img src="BigB.png" alt="BigB" class="bigb-img">
+
 
 
     <!-- Footer -->
