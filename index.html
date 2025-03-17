@@ -32,6 +32,24 @@
             transform: scale(1.1); /* Title image scaling on hover */
         }
 
+        /* Floating animation for the arm image (WatchLeft.png) */
+        .watchleft-img {
+            position: absolute;
+            left: 5%; /* Adjust to position the image from the left side */
+            bottom: 0; /* Adjust to place the image at the bottom of the page */
+            width: 15%; /* Adjust the size of the image */
+            animation: float 3.3s ease-in-out infinite; /* Floating effect */
+        }
+
+        /* Floating animation for the arm image (WatchRight.png) */
+        .watchright-img {
+            position: absolute;
+            right: 5%; /* Adjust to position the image from the right side */
+            top: 0; /* Adjust to place the image at the top of the page */
+            width: 15%; /* Adjust the size of the image */
+            animation: float-right 3.3s ease-in-out infinite; /* Floating effect */
+        }
+
         /* Middle Image - WatchPage with floating effect (no scaling) */
         .watchpage-img {
             width: 55%; /* Increased the size by 19% */
@@ -149,6 +167,13 @@
 
     <!-- Title Image -->
     <img src="titleOffS.png" alt="Offspring Title" class="title-img">
+
+    
+    <!-- WatchLeft Image (Arm with Phone) -->
+    <img src="WatchLeft.png" alt="Watch Left" class="watchleft-img">
+
+    <!-- WatchRight Image (Arm with Phone) -->
+    <img src="WatchRight.png" alt="Watch Right" class="watchright-img">
 
     <!-- Watch Page Image (Updated Size and Centered, Floating Effect Added) -->
     <img src="WatchPage.png" alt="Watch Page" class="watchpage-img">
