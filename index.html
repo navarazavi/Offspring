@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Fertile AI</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            font-family: "SF Pro Text", sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            position: relative; /* Ensures the gradient covers the whole page */
+        }
 
-html {
-    background: linear-gradient(to bottom, #ffffff, #f1f1f1); /* Full-page gradient */
-    height: 100%; /* Ensure it covers the entire height of the page */
-}
-        
-body {
-    cursor: url('cursor.png') 26 39, auto !important;
-    font-family: "SF Pro Text", sans-serif;
-    background: linear-gradient(to bottom, #ffffff, #f1f1f1); /* Full-page gradient */
-    color: #333;
-    padding: 20px;
-    text-align: center;
-    margin: 0;
-    position: relative; /* Added to make sure gradient applies to the entire body */
-}
-
-
+        body {
+            cursor: url('cursor.png') 26 39, auto !important; /* Custom cursor */
+            text-align: center;
+        }
 
         /* Title image with scaling effect */
         .title-img {
@@ -30,157 +26,81 @@ body {
             max-width: 700px;
             margin: 0 auto;
             display: block;
-            transition: transform 0.3s ease; /* Added smooth scaling transition */
+            transition: transform 0.3s ease;
         }
 
         .title-img:hover {
-            transform: scale(1.1); /* Title image scaling on hover */
+            transform: scale(1.1);
         }
 
-        /* WatchLeft Image */
-        .watchleft-img {
+        /* Fixed images */
+        .watchleft-img, .watchright-img {
             position: fixed;
+            width: 31%;
+            z-index: 10;
+        }
+
+        .watchleft-img {
             left: 5.9%;
             bottom: 0;
-            width: 31%;
-            z-index: 10;
         }
 
-        /* WatchRight Image */
         .watchright-img {
-            position: fixed;
             right: 5.9%;
             top: 0;
-            width: 31%;
-            z-index: 10;
         }
 
         /* Floating and Scaling Effect for Images */
         @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .floating-scaling {
             position: absolute;
-            animation: float 3.3s ease-in-out infinite; /* Floating effect */
-            transition: transform 0.3s ease; /* Smooth scaling transition */
+            animation: float 3.3s ease-in-out infinite;
+            transition: transform 0.3s ease;
         }
 
         .floating-scaling:hover {
-            transform: scale(1.1); /* Scaling effect on hover */
+            transform: scale(1.1);
         }
 
-        /* Positioning and size for DataP, Dem, BigB, and AskStu */
-        .data-icon {
-            top: 65%;
-            right: 5.9%;
-            width: 150px;
-        }
+        /* Positioning for images */
+        .data-icon { top: 65%; right: 5.9%; width: 150px; }
+        .dem-img { top: 68%; right: 21.7%; width: 120px; }
+        .scaling-icon { top: 16.7%; left: 9.6%; width: 150px; }
+        .bigb-img { top: 24%; left: 25.9%; width: 120px; }
+        .fertile-img { left: 2.7%; top: 34%; width: 9.5%; }
+        .floating-icon { left: 14.5%; top: 70.5%; width: 150px; }
+        .gay-img { top: 39.8%; right: 28.5%; width: 80px; }
 
-        .dem-img {
-            top: 68%;
-            right: 21.7%;
-            width: 120px;
-        }
-
-        .scaling-icon {
-            top: 16.7%;
-            left: 9.6%;
-            width: 150px;
-        }
-
-        .bigb-img {
-            top: 24%;
-            left: 25.9%;
-            width: 120px;
-        }
-
-        /* Fertility image */
-        .fertile-img {
-            left: 2.7%;
-            top: 34%;
-            width: 9.5%;
-        }
-
-        /* Floating icon for ReadMySpecs */
-        .floating-icon {
-            left: 14.5%;
-            top: 70.5%;
-            width: 150px;
-        }
-
-        /* LGBTQ image */
-        .gay-img {
-            top: 39.8%;
-            right: 28.5%;
-            width: 80px;
-        }
-
-        /* Animation for floating effect */
-        @keyframes float-left {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(5px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float-right {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        /* Footer */
+        .footer {
+            position: relative; /* Ensure footer is positioned correctly */
+            margin-top: 20px; /* Space above footer */
         }
     </style>
 </head>
 <body>
 
-    <!-- Title Image with Scaling -->
+    <!-- Title Image -->
     <img src="titleOffS.png" alt="Offspring Title" class="title-img">
 
-    <!-- WatchLeft Image (Arm with Phone) -->
+    <!-- Fixed Images -->
     <img src="WatchLeft.png" alt="Watch Left" class="watchleft-img">
-
-    <!-- WatchRight Image (Arm with Phone) -->
     <img src="WatchRight.png" alt="Watch Right" class="watchright-img">
 
-    <!-- DataP Image Link (with Hover Effect, Positioned on the Right) -->
+    <!-- Floating Images -->
     <a href="your-data-page-link" target="_blank">
         <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
     </a>
-
-    <!-- Dem Image (Positioned Below) -->
     <img src="Dem.png" alt="Dem" class="dem-img floating-scaling">
-
-    <!-- Fertility image -->
     <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling">
-
-    <!-- LGBTQ image -->
     <img src="gay.png" alt="gay" class="gay-img floating-scaling">
-
-    <!-- AskStu Image (Scaling Icon) -->
     <a href="chatbot.html">
         <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling">
     </a>
-
-    <!-- BigB Image (Positioned Below AskStu.png) -->
     <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
     <!-- Footer -->
@@ -189,4 +109,3 @@ body {
     <script src="main/app.js"></script>
 </body>
 </html>
-
