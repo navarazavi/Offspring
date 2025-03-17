@@ -46,11 +46,25 @@
             animation: float 1s ease-in-out infinite;
         }
 
+        /* Positioning the Dem.png image on the right */
+        .dem-img {
+            position: absolute; /* Use absolute positioning to place it freely */
+            right: 6.5%; /* Adjust this to move it further or closer to the right edge */
+            top: 75%; /* Adjust the vertical position */
+            width: 10%; /* Adjust size, similar to the other images */
+            transition: transform 0.3s ease; /* Smooth scaling on hover */
+        }
+
+        .dem-img:hover {
+            transform: scale(1.1); /* Scaling effect when hovered */
+        }
+
+
         /* Floating icon for DataP.png (Positioned on the right side) */
         .data-icon {
             position: absolute;
-            right: 7%; /* Positioned on the right side */
-            top: 69%;
+            right: 8%; /* Positioned on the right side */
+            top: 73%;
             width: 123px; /* Adjust size */
             transition: transform 0.3s ease; /* Smooth scaling transition */
         }
@@ -72,19 +86,7 @@
             transform: scale(1.2); /* Scale it up when hovered */
         }
 
-        /* Positioning the Dem.png image on the right */
-        .dem-img {
-            position: absolute; /* Use absolute positioning to place it freely */
-            right: 5%; /* Adjust this to move it further or closer to the right edge */
-            top: 65%; /* Adjust the vertical position */
-            width: 10%; /* Adjust size, similar to the other images */
-            transition: transform 0.3s ease; /* Smooth scaling on hover */
-        }
-
-        .dem-img:hover {
-            transform: scale(1.1); /* Scaling effect when hovered */
-        }
-
+    
         /* Fertility image */
         .fertile-img { 
             position: absolute; 
@@ -148,8 +150,8 @@
         /* Floating icon for ReadMySpecs */
         .floating-icon {
             position: absolute;
-            left: 9%;
-            top: 35%;
+            left: 10.5%;
+            top: 41%;
             width: 123px;
             transition: transform 0.3s ease; /* Added smooth scaling transition */
         }
