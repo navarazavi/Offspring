@@ -49,40 +49,48 @@
     /* Position the DataP.png image on top of Dem.png */
     .data-icon {
     position: absolute; /* Position it freely on the page */
-    z-index: 10; /* Make sure it stays above other images */
     top: 69%; /* Adjust this to position it where you want */
     right: 3.0%; /* Adjust this as needed */
     width: 123px; /* Adjust the size as needed */
-    }
+    } 
+    
+    .data-icon:hover {
+        transform: scale(1.1); /* Title image scaling on hover */
+        }
 
     .dem-img {
     position: absolute; /* Keep it in place */
-    z-index: 1; /* Ensure it stays below the DataP.png image */
     top: 55%; /* Adjust this to position it as you need */
     right: 8%; /* Adjust to suit your layout */
     width: 150px; /* Adjust the size if needed */
+
+    .dem-img:hover {
+            transform: scale(1.1); /* Title image scaling on hover */
 }
 
 
     /* Position the AskStu.png image above BigB.png */
     .scaling-icon {
     position: absolute; /* Position it freely on the page */
-    z-index: 10; /* Make sure it stays above BigB.png */
     top: 85%; /* Adjust this to position it where you want */
     left: 5%; /* Adjust as needed */
     width: 150px; /* Adjust the size as needed */
 }
+    .scaling-icon:hover {
+            transform: scale(1.1); /* Title image scaling on hover */
+    }
 
 .bigb-img {
     position: absolute; /* Keep it in place */
-    z-index: 1; /* Ensure it stays below AskStu.png */
     bottom: 10%; /* Adjust this to position it where you want */
     left: 6%; /* Adjust to suit your layout */
     width: 150px; /* Increase width to a proper size */
-    max-width: 100%; /* Ensure responsiveness */
+    
 }
+    .bigb-img:hover {
+            transform: scale(1.1); /* Title image scaling on hover */
 
-
+    }
     
         /* Fertility image */
         .fertile-img { 
@@ -161,8 +169,8 @@
         /* Floating icon for ReadMySpecs */
         .floating-icon {
             position: absolute;
-            left: 9.275%;
-            top: 43.5%;
+            left: 10.55%;
+            top: 45.5%;
             width: 123px;
             transition: transform 0.3s ease; /* Added smooth scaling transition */
         }
