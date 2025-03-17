@@ -56,16 +56,12 @@
         }
 
         .floating-scaling {
-            position: relative; /* Change to relative to support absolute positioning of the inner scale */
+            position: absolute;
             animation: float 3.3s ease-in-out infinite;
-        }
-
-        /* Add a new class for the actual scaling effect */
-        .scaled {
             transition: transform 0.3s ease;
         }
 
-        .floating-scaling:hover .scaled {
+        .floating-scaling:hover {
             transform: scale(1.1);
         }
 
@@ -96,23 +92,16 @@
 
     <!-- Floating Images -->
     <a href="your-data-page-link" target="_blank">
-        <div class="floating-scaling">
-            <img src="DataP.png" alt="Data Page" class="data-icon scaled">
-        </div>
+        <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
     </a>
-    <div class="floating-scaling">
-        <img src="Dem.png" alt="Dem" class="dem-img scaled">
-    </div>
-    <div class="floating-scaling">
-        <img src="Fertile.png" alt="Fertile" class="fertile-img scaled">
-    </div>
-    <div class="floating-scaling">
-        <img src="gay.png" alt="gay" class="gay-img scaled">
-    </div>
+    <img src="Dem.png" alt="Dem" class="dem-img floating-scaling">
+    <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling">
+    <img src="gay.png" alt="gay" class="gay-img floating-scaling">
     <a href="chatbot.html">
-        <div class="floating-scaling">
-            <img src="AskStu.png" alt="Ask Stu" class="scaling-icon scaled">
-        </div>
+        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling">
     </a>
-    <div class="floating-scaling">
-        <img src="bigB.png" alt="BigB" class="bigb-img scaled
+    <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
+
+    <script src="main/app.js"></script>
+</body>
+</html>
