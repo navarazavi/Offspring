@@ -100,6 +100,20 @@
             transform: scale(1.1);
         }
 
+        /* Scaling Effect for BigB Image (Positioned at the Bottom Left) */
+        .scaling-icon-bottom-left {
+        position: absolute;
+        left: 5%; /* Adjust the horizontal position */
+        bottom: 5%; /* Adjust the vertical position */
+        width: 120px; /* Adjust the size */
+        transition: transform 0.3s ease; /* Smooth scaling effect */
+    }
+
+        .scaling-icon-bottom-left:hover {
+        transform: scale(1.2); /* Scale it up when hovered */
+    }
+
+
         /* Stu Image */
         .stu-img {
             width: 19%; /* Increased Stu's size by 120% */
@@ -214,6 +228,10 @@
     <a href="your-full-specs-link" target="_blank">
         <img src="ReadMyS.png" alt="Read My Specs" class="floating-icon">
     </a>
+
+    <!-- Add the BigB image to the body -->
+    <img src="BigB.png" alt="BigB Icon" class="scaling-icon-bottom-left">
+
 
     <!-- Footer -->
     <p class="footer">Designed for Apple Health.</p>
