@@ -1,4 +1,7 @@
+from flask import Flask, request, jsonify
 import random
+
+app = Flask(__name__)
 
 class StuTheStork:
     def __init__(self):
@@ -66,24 +69,29 @@ class StuTheStork:
         return random.choice(self.responses.get(category, ["I'm not sure how to help with that, but let's track what we can!"]))
 
 # Function to integrate with main.py
-def stu_chatbot(user_input):
-    """Maps user input to predefined categories."""
+@app.route('/ask_stu', methods=['POST'])
+def stu_chatbot():
+    user_input = request.json.get('question')  # Extract user input from JSON request
     stu = StuTheStork()
 
     # Basic keyword matching
     if any(word in user_input.lower() for word in ["hi", "hello", "hey"]):
-        return stu.get_response("greeting")
+        return jsonify({"response": stu.get_response("greeting")})
     elif any(word in user_input.lower() for word in ["struggling", "broken", "help", "hard"]):
-        return stu.get_response("encouragement")
+        return jsonify({"response": stu.get_response("encouragement")})
     elif any(word in user_input.lower() for word in ["cycle", "ovulation", "fertile", "window"]):
-        return stu.get_response("cycle_tracking")
+        return jsonify({"response": stu.get_response("cycle_tracking")})
     elif any(word in user_input.lower() for word in ["doctor", "consult", "specialist"]):
-        return stu.get_response("consultation")
+        return jsonify({"response": stu.get_response("consultation")})
     
     # Matching for general fertility questions
     for response in stu.responses["general_fertility_questions"]:
         if any(word in user_input.lower() for word in response["question"].lower().split()):
-            return response["answer"]
+            return jsonify({"response": response["answer"]})
     
-    return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+    return jsonify({"response": "I'm still learning! Try asking about fertility tracking, cycles, or consultations."})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
