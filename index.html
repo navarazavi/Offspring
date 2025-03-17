@@ -46,32 +46,23 @@
             animation: float 1s ease-in-out infinite;
         }
 
-        /* Positioning the Dem.png image on the right */
-        .dem-img {
-            position: absolute; /* Use absolute positioning to place it freely */
-            right: 6.5%; /* Adjust this to move it further or closer to the right edge */
-            top: 75%; /* Adjust the vertical position */
-            width: 10%; /* Adjust size, similar to the other images */
-            transition: transform 0.3s ease; /* Smooth scaling on hover */
-        }
+    /* Position the DataP.png image on top of Dem.png */
+    .data-icon {
+    position: absolute; /* Position it freely on the page */
+    z-index: 10; /* Make sure it stays above other images */
+    top: 20%; /* Adjust this to position it where you want */
+    right: 10%; /* Adjust this as needed */
+    width: 150px; /* Adjust the size as needed */
+    }
 
-        .dem-img:hover {
-            transform: scale(1.1); /* Scaling effect when hovered */
-        }
+    .dem-img {
+    position: absolute; /* Keep it in place */
+    z-index: 1; /* Ensure it stays below the DataP.png image */
+    top: 35%; /* Adjust this to position it as you need */
+    right: 15%; /* Adjust to suit your layout */
+    width: 150px; /* Adjust the size if needed */
+}
 
-
-        /* Floating icon for DataP.png (Positioned on the right side) */
-        .data-icon {
-            position: absolute;
-            right: 8%; /* Positioned on the right side */
-            top: 73%;
-            width: 123px; /* Adjust size */
-            transition: transform 0.3s ease; /* Smooth scaling transition */
-        }
-
-        .data-icon:hover {
-            transform: scale(1.1); /* Scaling effect on hover */
-        }
 
         /* Scaling Effect for AskStu.png */
         .scaling-icon {
@@ -200,16 +191,15 @@
     <div class="chatbot-intro">
         <p>Meet Stu, your friendly reproductive friend! <br> Try asking Stu a question ↴</p>
     </div>
-
+    
     <!-- DataP Image Link (with Hover Effect, Positioned on the Right) -->
     <a href="your-data-page-link" target="_blank">
-        <img src="DataP.png" alt="Data Page" class="data-icon">
+    <img src="DataP.png" alt="Data Page" class="data-icon">
     </a>
 
-    <!-- Add the Dem.png image to the body -->
+    <!-- Dem Image (Positioned Below) -->
     <img src="Dem.png" alt="Dem" class="dem-img">
 
-</a>
 
     <img src="Fertile.png" alt="Fertile" class="fertile-img">
 
