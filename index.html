@@ -19,6 +19,17 @@
             cursor: url('cur.cur'), auto !important;
         }
 
+        /* General scaling for all images on hover */
+        .scaling-icon, .floating-scaling, .data-icon, .dem-img, .bigb-img, .fertile-img, .floating-icon, .gay-img {
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for specific images */
+        .scaling-icon:hover, .floating-scaling:hover, .data-icon:hover, .dem-img:hover, .bigb-img:hover, .fertile-img:hover, .floating-icon:hover, .gay-img:hover {
+            transform: scale(1.1);
+            z-index: 20; /* Make sure the hovered image is above others */
+        }
+
         /* Title image with scaling effect */
         .title-img {
             width: 100%;
@@ -58,13 +69,6 @@
         .floating-scaling {
             position: absolute;
             animation: float 3.3s ease-in-out infinite;
-            transition: transform 0.3s ease, z-index 0s;
-        }
-
-        /* Hover effect for floating-scaling images */
-        .floating-scaling:hover {
-            transform: scale(1.1);
-            z-index: 20; /* Make sure the hovered image is above others */
         }
 
         /* Positioning for images */
