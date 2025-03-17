@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Intelligent Fertility Insights</title>
     <style>
-
-
-    body {
-    cursor: url('cursor.png') 26 39, auto;
-    }
-
-
+        body {
+            cursor: url('cursor.png') 26 39, auto;
+        }
 
         /* General Body Styles */
         body {
@@ -47,43 +43,55 @@
 
         /* Floating icon for DataP.png (Positioned on the right side) */
         .data-icon {
-        position: absolute;
-        right: 8%; /* Positioned on the right side */
-        top: 35%;
-        width: 160px; /* Adjust size */
-        transition: transform 0.3s ease; /* Smooth scaling transition */
+            position: absolute;
+            right: 8%; /* Positioned on the right side */
+            top: 35%;
+            width: 160px; /* Adjust size */
+            transition: transform 0.3s ease; /* Smooth scaling transition */
         }
 
         .data-icon:hover {
-        transform: scale(1.1); /* Scaling effect on hover */
-    }
+            transform: scale(1.1); /* Scaling effect on hover */
+        }
 
         /* Scaling Effect for AskStu.png */
         .scaling-icon {
-        width: 190px; /* Adjust the initial size */
-        left: 6%; 
-        top: 75%; 
-        position: absolute;
-        transition: transform 0.3s ease; /* Smooth scaling effect */
-    }
+            width: 190px; /* Adjust the initial size */
+            left: 6%; 
+            top: 75%; 
+            position: absolute;
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+        }
 
-    .scaling-icon:hover {
-    transform: scale(1.2); /* Scale it up when hovered */
-    }
+        .scaling-icon:hover {
+            transform: scale(1.2); /* Scale it up when hovered */
+        }
 
         /* Positioning the Dem.png image on the right */
         .dem-img {
-        position: absolute; /* Use absolute positioning to place it freely */
-        right: 7%; /* Adjust this to move it further or closer to the right edge */
-        top: 65%; /* Adjust the vertical position */
-        width: 11%; /* Adjust size, similar to the other images */
-        transition: transform 0.3s ease; /* Smooth scaling on hover */
-    }
+            position: absolute; /* Use absolute positioning to place it freely */
+            right: 7%; /* Adjust this to move it further or closer to the right edge */
+            top: 65%; /* Adjust the vertical position */
+            width: 11%; /* Adjust size, similar to the other images */
+            transition: transform 0.3s ease; /* Smooth scaling on hover */
+        }
 
-    .dem-img:hover {
-    transform: scale(1.1); /* Scaling effect when hovered */
-    }
+        .dem-img:hover {
+            transform: scale(1.1); /* Scaling effect when hovered */
+        }
 
+        /* Fertility image */
+        .fertile-img { 
+            position: absolute; 
+            left: 7% ; 
+            top: 57%; 
+            width: 15% ; 
+            transition: transform 0.3s ease; 
+        }
+
+        .fertile-img:hover {
+            transform: scale(1.1);
+        }
 
         /* Stu Image */
         .stu-img {
@@ -116,7 +124,6 @@
             background-color: #6c757d;
             color: white;
             width: 120px;
-
         }
 
         /* Text Section Above the Button */
@@ -170,28 +177,27 @@
 
     <!-- Text Above the Chatbot (Centered) -->
     <div class="chatbot-intro">
-        <p>Meet Stu, your friendly reproductive friend! <br>Try asking Stu a question ↴</p>
+        <p>Meet Stu, your friendly reproductive friend! <br> Try asking Stu a question ↴</p>
     </div>
 
     <!-- DataP Image Link (with Hover Effect, Positioned on the Right) -->
-<a href="your-data-page-link" target="_blank">
-    <img src="DataP.png" alt="Data Page" class="data-icon">
-</a>
+    <a href="your-data-page-link" target="_blank">
+        <img src="DataP.png" alt="Data Page" class="data-icon">
+    </a>
 
-<!-- Add the Dem.png image to the body -->
-<img src="Dem.png" alt="Dem" class="dem-img">
+    <!-- Add the Dem.png image to the body -->
+    <img src="Dem.png" alt="Dem" class="dem-img">
+
+    <img src="Fertile.png" alt="Fertile" class="fertile-img">
 
     <!-- Stu Image (Centered and Size Increased by 120%) -->
     <img src="stu.png" alt="Stu" class="stu-img">
 
-    <img src="AskStu.png" alt="Ask Stu" class="scaling-icon">
-
-
-    <!-- Chatbot Input Section -->
-    <div class="button-container">
-        <input type="text" id="userInput" placeholder="What's my fertility window?">
-        <button id="submitBtn">Ask Stu</button>
-    </div>
+    <!-- AskStu Image (Scaling Icon) --> 
+    <!-- Removed Chatbot buttons -->
+    <a href="your-chatbot-page-link">
+        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon">
+    </a>
 
     <!-- Read My Specs Image Link (with Hover Effect) -->
     <a href="your-full-specs-link" target="_blank">
@@ -204,4 +210,3 @@
     <script src="main/app.js"></script>
 </body>
 </html>
-
