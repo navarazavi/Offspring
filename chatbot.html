@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Stu</title>
+    <style>
+        body {
+            font-family: "SF Pro Text", sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .chatbot-container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .chat-input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .response {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chatbot-container">
+        <h1>Chat with Stu</h1>
+        <input type="text" id="chatInput" class="chat-input" placeholder="Ask a question...">
+        <button id="submitChat">Send</button>
+
+        <p class="response" id="stuResponse">Your response will appear here.</p>
+    </div>
+
+    <script>
+        document.getElementById('submitChat').addEventListener('click', function() {
+            const userInput = document.getElementById('chatInput').value;
+            
+            // Send the question to the Flask backend
+            fetch('/ask_stu', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('stuResponse').innerText = data.response;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('stuResponse').innerText = "Oops! Something went wrong.";
+            });
+        });
+    </script>
+</body>
+</html>
