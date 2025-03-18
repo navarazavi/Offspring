@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
             padding: 20px;
-            font-family: "SF Pro Text", sans-serif; /* Default for the whole site */
+            font-family: "SF Pro Text", sans-serif;
             color: #333;
             background: linear-gradient(to bottom, #ffffff, #f1f1f1);
             position: relative;
@@ -31,33 +31,9 @@
             transform: scale(1.1);
         }
 
-        /* 🌟 Image Size Fixes 🌟 */
-        img {
-            max-width: 100%; /* Prevents oversized scaling */
-            height: auto;
-            display: block;
-        }
-
-        /* Floating Images - Controlled Scaling */
-        .floating-scaling {
-            width: 120px;
-            max-width: 12vw;
-            height: auto;
-        }
-
-        /* Data & Folder Icons */
-        .data-icon, .scaling-icon {
-            width: 150px;
-            max-width: 15vw;
-            height: auto;
-        }
-
-        /* Watch Images - Preventing Giant Scaling */
         .watchleft-img, .watchright-img {
-            width: 20%;
-            max-width: 250px;
-            height: auto;
             position: fixed;
+            width: 31%;
             z-index: 10;
         }
 
@@ -71,14 +47,6 @@
             top: 0;
         }
 
-        /* Pomegranate, Hands, and Other Decorative Images */
-        .fertile-img, .gay-img, .dem-img, .bigb-img {
-            width: 100px;
-            max-width: 10vw;
-            height: auto;
-        }
-
-        /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
@@ -95,13 +63,26 @@
             z-index: 20;
         }
 
-        /* 🌟 Chatbot Styling (Fira Code ONLY) 🌟 */
+        .data-icon { top: 65%; right: 5.9%; width: 150px;}
+        .dem-img { top: 68%; right: 20.7%; width: 120px;}
+        .scaling-icon { top: 16.7%; left: 9.6%; width: 150px;}
+        .bigb-img { top: 20.5%; left: 24.9%; width: 160px;}
+        .fertile-img { left: 2.7%; top: 34%; width: 9.5%;}
+        .floating-icon { left: 14.5%; top: 70.5%; width: 150px;}
+        .gay-img { top: 39.8%; right: 28.5%; width: 110px;}
+
+        .footer {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* 🌟 Updated Chatbox Styling 🌟 */
         #chat-container {
-            width: 400px;
+            width: 350px;
             background: #c0c0c0;
             border: 3px solid #808080;
             padding: 10px;
-            font-family: "Fira Code", monospace;
+            font-family: "Fira Code", monospace; 
             font-size: 14px;
             box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
             text-align: left;
@@ -181,7 +162,7 @@
     </a>
     <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
-    <!-- 🌟 Chatbot (Now Perfectly Styled) 🌟 -->
+    <!-- 🌟 Chatbot Section (Perfected) 🌟 -->
     <div id="chat-container">
         <h2>Try asking Stu a question!</h2>
         <div class="chat-input-wrapper">
@@ -228,3 +209,4 @@
 
 </body>
 </html>
+
