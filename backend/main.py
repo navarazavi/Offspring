@@ -24,7 +24,7 @@ def ask_stu():
     # If Stu can't answer, try using GPT-4 for a more detailed response
     if response == "I'm still learning! Try asking about fertility tracking, cycles, or consultations.":
         # If the response is the default one, query GPT-4
-        gpt_response = openai.chat_completions.create(
+        gpt_response = openai.ChatCompletion.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -37,3 +37,4 @@ def ask_stu():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
+
