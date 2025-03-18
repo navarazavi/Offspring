@@ -85,6 +85,7 @@
             margin: 20px auto;
             border: 1px solid black; /* Thin black border */
             text-align: center;
+            position: relative;
         }
 
         #chat-container h2 {
@@ -114,9 +115,7 @@
             width: 30px;
             height: 30px;
             background-color: transparent;
-            border: none;
-            border-left: 1px solid black;
-            border-bottom: 1px solid black;
+            border: 1px solid black; /* Thin black border */
             transform: rotate(45deg); /* Arrow shape */
             position: absolute;
             right: 10px;
@@ -201,9 +200,5 @@
                 chatInput.value = ''; // Clear the input field
             } else {
                 alert("Please type a question to start the chat!");
-            }
-        }
-    </script>
+   
 
-</body>
-</html>
