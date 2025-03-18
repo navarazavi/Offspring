@@ -1,4 +1,4 @@
-ffrom flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
 import random
 
 app = Flask(__name__)
