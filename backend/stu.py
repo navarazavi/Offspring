@@ -70,8 +70,7 @@ class StuTheStork:
 
 # Function to integrate with main.py
 @app.route('/ask_stu', methods=['POST'])
-def stu_chatbot():
-    user_input = request.json.get('question')  # Extract user input from JSON request
+def stu_chatbot(user_input):  # <-- Change: Accept user_input as an argument
     stu = StuTheStork()
 
     # Basic keyword matching
@@ -93,5 +92,3 @@ def stu_chatbot():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
