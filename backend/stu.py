@@ -1,7 +1,4 @@
-from flask import Flask, request, jsonify
 import random
-
-app = Flask(__name__)
 
 class StuTheStork:
     def __init__(self):
@@ -28,55 +25,30 @@ class StuTheStork:
             ],
             "general_fertility_questions": [
                 {"question": "What is fertility?", "answer": "Fertility is the natural ability to conceive a child, involving the functioning of the reproductive system."},
-                # Add more questions and answers here
+                {"question": "How do I know when I'm most fertile?", "answer": "The most fertile time is typically during ovulation, which occurs around 14 days before your next period."},
+                {"question": "How can I improve my fertility?", "answer": "Maintain a healthy lifestyle with a balanced diet, exercise, stress management, and proper medical care."},
+                {"question": "What is IVF?", "answer": "In vitro fertilization (IVF) is a procedure where eggs are fertilized outside the body before being implanted in the uterus."},
+                # Add more fertility-related questions here...
             ]
         }
 
-    def get_response(self, category):
-        """Returns a response based on the requested category."""
-        return random.choice(self.responses.get(category, ["I'm not sure how to help with that, but let's track what we can!"]))
-
-def match_question(self, user_input):
-    """Match user input to a known question."""
-    print(f"Received user input: {user_input}")  # Log the user input for debugging
-    
-    user_input_lower = user_input.lower()
-    
-    if any(word in user_input_lower for word in ["hi", "hello", "hey"]):
-        return "greeting"
-    elif any(word in user_input_lower for word in ["struggling", "broken", "help", "hard", "difficult"]):
-        return "encouragement"
-    elif any(word in user_input_lower for word in ["cycle", "ovulation", "fertile", "window", "period"]):
-        return "cycle_tracking"
-    elif any(word in user_input_lower for word in ["doctor", "consult", "specialist", "need advice"]):
-        return "consultation"
-    
-    for response in self.responses["general_fertility_questions"]:
-        if user_input_lower in response["question"].lower():
-            return response["answer"]
+    def match_question(self, user_input):
+        """Match user input to a known question."""
+        user_input_lower = user_input.lower()
         
-    return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+        # Matching categories based on keywords
+        if any(word in user_input_lower for word in ["hi", "hello", "hey"]):
+            return random.choice(self.responses["greeting"])
+        elif any(word in user_input_lower for word in ["struggling", "broken", "help", "hard"]):
+            return random.choice(self.responses["encouragement"])
+        elif any(word in user_input_lower for word in ["cycle", "ovulation", "fertile", "window", "period"]):
+            return random.choice(self.responses["cycle_tracking"])
+        elif any(word in user_input_lower for word in ["doctor", "consult", "specialist"]):
+            return random.choice(self.responses["consultation"])
+        
+        # Check if it matches any specific fertility-related questions
+        for response in self.responses["general_fertility_questions"]:
+            if user_input_lower in response["question"].lower():
+                return response["answer"]
 
-# Function to integrate with main.py
-@app.route('/ask_stu', methods=['POST'])
-def stu_chatbot():
-    user_input = request.json.get('question')  # <-- Extract user input from the request
-    stu = StuTheStork()
-    
-    # Log input for debugging
-    print(f"User input received: {user_input}")
-    
-    # Find the category or get a general response
-    category_or_response = stu.match_question(user_input)
-    
-    # If it's a category, get a response based on that
-    if isinstance(category_or_response, str) and category_or_response in stu.responses:
-        response = stu.get_response(category_or_response)
-    else:
-        # Otherwise, we have a general response (a direct answer)
-        response = category_or_response
-    
-    return jsonify({"response": response})
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
