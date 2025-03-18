@@ -1,5 +1,6 @@
-flask
-flask_cors
-requests
+Flask
+gunicorn>=20.1.0
+flask-cors
+python-dotenv
 transformers
 datasets
