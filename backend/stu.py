@@ -1,4 +1,5 @@
 import random
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 class StuTheStork:
     def __init__(self):
@@ -32,8 +33,29 @@ class StuTheStork:
             ]
         }
 
+        # Load GPT-2 model and tokenizer
+        self.model_name = "gpt2"  # You can use larger models like "gpt2-medium" or "gpt2-large"
+        self.model = GPT2LMHeadModel.from_pretrained(self.model_name)
+        self.tokenizer = GPT2Tokenizer.from_pretrained(self.model_name)
+
+        # Set pad token to eos_token (important for GPT-2)
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+
+    def generate_response(self, user_input):
+        """Generate a response from the GPT-2 model."""
+        # Tokenize the user input
+        inputs = self.tokenizer(user_input, return_tensors="pt")
+        
+        # Generate a response from GPT-2
+        outputs = self.model.generate(inputs['input_ids'], max_length=100, num_return_sequences=1)
+        
+        # Decode the output tokens to readable text
+        generated_text = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        
+        return generated_text
+
     def match_question(self, user_input):
-        """Match user input to a known question."""
+        """Match user input to a known question and return an appropriate response."""
         user_input_lower = user_input.lower()
         
         # Matching categories based on keywords
@@ -51,4 +73,5 @@ class StuTheStork:
             if user_input_lower in response["question"].lower():
                 return response["answer"]
 
-        return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+        # If no match found, generate a GPT-2 response
+        return self.generate_response(user_input)
