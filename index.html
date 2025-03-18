@@ -76,72 +76,60 @@
             margin-top: 20px;
         }
 
-        /* Chatbot container */
+        /* 🌟 RETRO MAC CHATBOX STYLING 🌟 */
         #chat-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: transparent;
-            width: 350px;
-            margin: 20px auto;
-            border: 1px solid black; /* Thin black border */
+            width: 400px;
+            background: #c0c0c0; /* Classic Mac grey */
+            border: 3px solid #808080; /* Beveled border */
+            padding: 10px;
+            font-family: 'Chicago', 'Geneva', 'Monaco', sans-serif; /* Retro Mac fonts */
+            font-size: 14px;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000; /* Beveled effect */
             text-align: center;
-            position: relative;
+            margin: 20px auto;
         }
 
         #chat-container h2 {
-            font-size: 1.25rem;
-            margin: 0;
-            padding-bottom: 10px;
-            font-family: 'Fira Code', monospace;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
         }
 
-        /* Message input area with Fira Code font */
-        #chat-container input[type="text"] {
+        #chatInput {
             width: 80%;
-            padding: 12px;
-            border: 1px solid black; /* Thin black border */
-            margin-bottom: 10px;
-            font-size: 1rem;
-            background: transparent; /* No fill */
-            color: #333; /* Dark text */
-            font-family: 'Fira Code', monospace; /* Fira Code font */
-            outline: none;
-            display: inline-block; /* Center it with the arrow */
-            text-align: left;
-            line-height: 1.2; /* Slightly better text alignment */
+            padding: 5px;
+            background: #fff;
+            border: 2px solid #808080;
+            font-family: 'Chicago', 'Geneva', sans-serif;
+            font-size: 12px;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
         }
 
-        /* Send arrow inside the input area */
-        #chat-container .send-arrow {
-            width: 30px;
-            height: 30px;
-            background-color: transparent;
-            border: 1px solid black; /* Thin black border */
-            transform: rotate(45deg); /* Arrow shape */
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg); /* Center vertically */
+        .send-arrow {
+            background: #c0c0c0;
+            border: 2px solid #808080;
+            padding: 5px;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
-            font-family: 'Fira Code', monospace;
-            font-size: 1.5rem;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
         }
 
-        #chat-container .send-arrow:hover {
-            background-color: #f1f1f1;
+        .send-arrow:active {
+            box-shadow: inset 2px 2px 0px #fff, inset -2px -2px 0px #000;
         }
 
-        /* Stu's response display */
         #stuResponse {
             margin-top: 20px;
-            font-family: 'Fira Code', monospace;
-            color: darkgrey; /* Lighter color for the response */
-            background-color: transparent;
+            font-family: 'Chicago', 'Geneva', 'Monaco', sans-serif;
+            color: #000; /* Classic Mac system text color */
+            background-color: #fff;
             padding: 10px;
-            border-radius: 5px;
+            border: 2px solid #808080;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
             display: none;
-            border: 1px solid black; /* Thin black border */
         }
     </style>
 </head>
@@ -166,7 +154,7 @@
     </a>
     <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
-    <!-- Chatbot Section -->
+    <!-- 🌟 Retro Mac Chatbot Section 🌟 -->
     <div id="chat-container">
         <h2>Try asking Stu a question!</h2>
         <input type="text" id="chatInput" placeholder="Message">
@@ -184,25 +172,25 @@
                 stuResponse.innerHTML = "Stu: Loading..."; // Placeholder for response
 
                 // Send request to backend
-                fetch('https://offspring-backend.onrender.com/ask_stu', {  // Your backend URL
+                fetch('https://offspring-backend.onrender.com/ask_stu', {  
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ question: chatInput.value })  // Send the user input
+                    body: JSON.stringify({ question: chatInput.value })  
                 })
                 .then(response => response.json())
                 .then(data => {
-                    stuResponse.innerHTML = `Stu: ${data.response}`;  // Display the response
-                    stuResponse.style.display = 'block';  // Show the response
+                    stuResponse.innerHTML = `Stu: ${data.response}`;
+                    stuResponse.style.display = 'block';
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                     stuResponse.innerHTML = "Stu: Oops, something went wrong. Try again later.";
-                    stuResponse.style.display = 'block';  // Show error response
+                    stuResponse.style.display = 'block';
                 });
 
-                chatInput.value = ''; // Clear the input field
+                chatInput.value = ''; 
             } else {
                 alert("Please type a question to start the chat!");
             }
