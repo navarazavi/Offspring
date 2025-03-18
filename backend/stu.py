@@ -28,8 +28,7 @@ class StuTheStork:
             ],
             "general_fertility_questions": [
                 {"question": "What is fertility?", "answer": "Fertility is the natural ability to conceive a child, involving the functioning of the reproductive system."},
-                {"question": "How do I know when I'm most fertile?", "answer": "The most fertile time is typically during ovulation, which occurs around 14 days before your next period."},
-                # Add more general fertility questions here
+                # Add more questions and answers here
             ]
         }
 
@@ -37,29 +36,45 @@ class StuTheStork:
         """Returns a response based on the requested category."""
         return random.choice(self.responses.get(category, ["I'm not sure how to help with that, but let's track what we can!"]))
 
+    def match_question(self, user_input):
+        """Match user input to a known question."""
+        print(f"Received user input: {user_input}")  # Log the user input for debugging
+        
+        if any(word in user_input.lower() for word in ["hi", "hello", "hey"]):
+            return "greeting"
+        elif any(word in user_input.lower() for word in ["struggling", "broken", "help", "hard"]):
+            return "encouragement"
+        elif any(word in user_input.lower() for word in ["cycle", "ovulation", "fertile", "window"]):
+            return "cycle_tracking"
+        elif any(word in user_input.lower() for word in ["doctor", "consult", "specialist"]):
+            return "consultation"
+        
+        for response in self.responses["general_fertility_questions"]:
+            if any(word in user_input.lower() for word in response["question"].lower().split()):
+                return response["answer"]
+        
+        return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+
 # Function to integrate with main.py
 @app.route('/ask_stu', methods=['POST'])
 def stu_chatbot():
     user_input = request.json.get('question')  # <-- Extract user input from the request
-    
     stu = StuTheStork()
-
-    # General matching approach (loosely checking for any relevant words)
-    if "hello" in user_input.lower() or "hi" in user_input.lower():
-        return jsonify({"response": stu.get_response("greeting")})
-    elif "help" in user_input.lower() or "struggling" in user_input.lower():
-        return jsonify({"response": stu.get_response("encouragement")})
-    elif "cycle" in user_input.lower() or "ovulation" in user_input.lower():
-        return jsonify({"response": stu.get_response("cycle_tracking")})
-    elif "doctor" in user_input.lower() or "consult" in user_input.lower():
-        return jsonify({"response": stu.get_response("consultation")})
     
-    # Match general fertility questions
-    for response in stu.responses["general_fertility_questions"]:
-        if any(word in user_input.lower() for word in response["question"].lower().split()):
-            return jsonify({"response": response["answer"]})
+    # Log input for debugging
+    print(f"User input received: {user_input}")
     
-    return jsonify({"response": "I'm still learning! Try asking about fertility tracking, cycles, or consultations."})
+    # Find the category or get a general response
+    category_or_response = stu.match_question(user_input)
+    
+    # If it's a category, get a response based on that
+    if isinstance(category_or_response, str) and category_or_response in stu.responses:
+        response = stu.get_response(category_or_response)
+    else:
+        # Otherwise, we have a general response (a direct answer)
+        response = category_or_response
+    
+    return jsonify({"response": response})
 
 if __name__ == '__main__':
     app.run(debug=True)
