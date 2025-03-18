@@ -12,9 +12,16 @@ def ask_stu():
     
     # Instantiate the StuTheStork class
     stu = StuTheStork()
+
+    # Find the category or get a general response
+    category_or_response = stu.match_question(user_input)
     
-    # Get the response based on the user input
-    response = stu.get_response(user_input)  # Use the get_response method
+    # If it's a category, get a response based on that
+    if isinstance(category_or_response, str) and category_or_response in stu.responses:
+        response = stu.get_response(category_or_response)
+    else:
+        # Otherwise, we have a general response (a direct answer)
+        response = category_or_response
     
     return jsonify({"response": response})
 
