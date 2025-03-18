@@ -139,6 +139,36 @@
             box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
             display: none;
         }
+
+        /* 🌟 Mobile Optimization - Less Cluttered Layout 🌟 */
+@media screen and (max-width: 768px) {
+    /* Shrink Title Image */
+    .title-img {
+        max-width: 90%;
+    }
+
+    /* Reduce Floating Image Sizes */
+    .floating-scaling {
+        width: 80px;
+        max-width: 10vw;
+    }
+
+
+    /* Center the Chatbox */
+    #chat-container {
+        width: 90%;
+        max-width: 350px;
+        margin: 20px auto;
+    }
+
+    /* Center Main Elements */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
     </style>
 </head>
 <body>
