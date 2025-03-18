@@ -81,36 +81,48 @@
             margin-top: 20px;
             padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
             width: 300px;
             margin: 20px auto;
-            border: 8px solid transparent; /* Set initial border */
-            border-image: url('border.png') 30 stretch; /* Apply the border image */
+            border: 1px solid black; /* Thin black border */
         }
 
+        #chat-container h2 {
+            font-size: 1.25rem;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        /* Message input area with Fira Code font */
         #chat-container input[type="text"] {
             width: 100%;
-            padding: 12px;
-            border-radius: 25px;
-            border: 2px solid #e0e0e0;
+            padding: 10px;
+            border: 1px solid black; /* Thin black border */
             margin-bottom: 10px;
             font-size: 1rem;
+            background: transparent; /* No fill */
+            color: #333; /* Dark text */
+            font-family: 'Fira Code', monospace; /* Fira Code font */
+            outline: none;
         }
 
-        #chat-container button {
-            width: 100%;
-            padding: 12px;
-            background-color: #1a73e8;
-            color: white;
-            font-size: 1rem;
+        /* Send arrow inside the input area */
+        #chat-container .send-arrow {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
             border: none;
-            border-radius: 25px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            transform: rotate(45deg); /* Arrow shape */
+            position: absolute;
+            right: 10px;
+            bottom: 12px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        #chat-container button:hover {
-            background-color: #006bb3;
+        #chat-container .send-arrow:hover {
+            background-color: #f1f1f1;
         }
 
         #stuResponse {
@@ -119,7 +131,7 @@
             color: slategray;
             background-color: #f1f1f1;
             padding: 10px;
-            border-radius: 8px;
+            border-radius: 5px;
             display: none;
         }
     </style>
@@ -149,7 +161,7 @@
     <div id="chat-container">
         <h2>Chat with Stu</h2>
         <input type="text" id="chatInput" placeholder="Type your question...">
-        <button onclick="startChat()">Send</button>
+        <button class="send-arrow" onclick="startChat()"></button>
         <div id="stuResponse"></div>
     </div>
 
