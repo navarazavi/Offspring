@@ -36,24 +36,26 @@ class StuTheStork:
         """Returns a response based on the requested category."""
         return random.choice(self.responses.get(category, ["I'm not sure how to help with that, but let's track what we can!"]))
 
-    def match_question(self, user_input):
-        """Match user input to a known question."""
-        print(f"Received user input: {user_input}")  # Log the user input for debugging
+def match_question(self, user_input):
+    """Match user input to a known question."""
+    print(f"Received user input: {user_input}")  # Log the user input for debugging
+    
+    user_input_lower = user_input.lower()
+    
+    if any(word in user_input_lower for word in ["hi", "hello", "hey"]):
+        return "greeting"
+    elif any(word in user_input_lower for word in ["struggling", "broken", "help", "hard", "difficult"]):
+        return "encouragement"
+    elif any(word in user_input_lower for word in ["cycle", "ovulation", "fertile", "window", "period"]):
+        return "cycle_tracking"
+    elif any(word in user_input_lower for word in ["doctor", "consult", "specialist", "need advice"]):
+        return "consultation"
+    
+    for response in self.responses["general_fertility_questions"]:
+        if user_input_lower in response["question"].lower():
+            return response["answer"]
         
-        if any(word in user_input.lower() for word in ["hi", "hello", "hey"]):
-            return "greeting"
-        elif any(word in user_input.lower() for word in ["struggling", "broken", "help", "hard"]):
-            return "encouragement"
-        elif any(word in user_input.lower() for word in ["cycle", "ovulation", "fertile", "window"]):
-            return "cycle_tracking"
-        elif any(word in user_input.lower() for word in ["doctor", "consult", "specialist"]):
-            return "consultation"
-        
-        for response in self.responses["general_fertility_questions"]:
-            if any(word in user_input.lower() for word in response["question"].lower().split()):
-                return response["answer"]
-        
-        return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
+    return "I'm still learning! Try asking about fertility tracking, cycles, or consultations."
 
 # Function to integrate with main.py
 @app.route('/ask_stu', methods=['POST'])
