@@ -32,19 +32,17 @@ def ask_stu():
     # If Stu can't answer, try using GPT-4 for a more detailed response
     if response == "I'm still learning! Try asking about fertility tracking, cycles, or consultations.":
         try:
-            gpt_response = openai.Completion.create(
+            gpt_response = openai.ChatCompletion.create(
                 model="gpt-4",  # Using GPT-4 model
-                prompt=user_input,  # Directly use the user's question as the prompt
-                max_tokens=150,  # Optional: limit the response length
-                n=1,  # Number of responses to generate (usually 1)
-                stop=None,  # Optional: specify stopping condition
-                temperature=0.7  # Optional: control the randomness of the response
+                messages=[
+                    {"role": "user", "content": user_input}  # Structure in a chat format
+                ]
             )
             
             # Log the full response from GPT-4 for debugging
             print("GPT-4 Response:", gpt_response)
 
-            response = gpt_response['choices'][0]['text'].strip()  # Access the completion text
+            response = gpt_response['choices'][0]['message']['content'].strip()  # Access the reply content
         
         except Exception as e:
             return jsonify({"error": str(e)}), 500  # Return the error as JSON
