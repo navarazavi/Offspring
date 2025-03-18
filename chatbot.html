@@ -133,5 +133,63 @@
         footer {
             position: absolute;
             bottom: 10px;
-            font-size: 0.9re
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chat with Stu</h1>
+    <p>Ask me anything, and I'll get back to you shortly!</p>
+
+    <div class="chat-container">
+        <input type="text" id="chatInput" placeholder="Type your question...">
+        <button onclick="startChat()">Start Chat</button>
+    </div>
+
+    <!-- Stu's response display area -->
+    <div id="stuResponse" class="stu-response" style="display: none;">
+        <!-- Stu's responses will appear here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Offspring – All rights reserved.</p>
+    </footer>
+
+    <script>
+        function startChat() {
+            const chatInput = document.getElementById('chatInput');
+            const stuResponse = document.getElementById('stuResponse');
+
+            if (chatInput.value.trim()) {
+                stuResponse.style.display = 'block'; // Show Stu's response div
+                stuResponse.textContent = `Stu: Loading...`; // Temporary message while waiting for response
+
+                // Send the user's question to the Flask backend on Render
+                fetch('https://offspring-backend.onrender.com/ask_stu', {  // <-- Your Render backend URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: chatInput.value })  // Send the question from input
+                })
+                .then(response => response.json())
+                .then(data => {
+                    stuResponse.textContent = `Stu: ${data.response}`;  // Display Stu's response
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    stuResponse.textContent = "Stu: Oops, something went wrong. Try again later.";
+                });
+
+                chatInput.value = ''; // Clear input field
+            } else {
+                alert("Please type a question to start the chat!");
+            }
+        }
+    </script>
+
+</body>
+</html>
 
