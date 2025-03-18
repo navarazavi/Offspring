@@ -80,7 +80,7 @@
         #chat-container {
             margin-top: 20px;
             padding: 20px;
-            background-color: #fff;
+            background-color: transparent;
             width: 350px;
             margin: 20px auto;
             border: 1px solid black; /* Thin black border */
@@ -98,7 +98,7 @@
         /* Message input area with Fira Code font */
         #chat-container input[type="text"] {
             width: 80%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid black; /* Thin black border */
             margin-bottom: 10px;
             font-size: 1rem;
@@ -108,6 +108,7 @@
             outline: none;
             display: inline-block; /* Center it with the arrow */
             text-align: left;
+            line-height: 1.2; /* Slightly better text alignment */
         }
 
         /* Send arrow inside the input area */
@@ -123,20 +124,24 @@
             transform: translateY(-50%) rotate(45deg); /* Center vertically */
             cursor: pointer;
             transition: background-color 0.3s;
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
         }
 
         #chat-container .send-arrow:hover {
             background-color: #f1f1f1;
         }
 
+        /* Stu's response display */
         #stuResponse {
             margin-top: 20px;
             font-family: 'Fira Code', monospace;
-            color: slategray;
-            background-color: #f1f1f1;
+            color: darkgrey; /* Lighter color for the response */
+            background-color: transparent;
             padding: 10px;
             border-radius: 5px;
             display: none;
+            border: 1px solid black; /* Thin black border */
         }
     </style>
 </head>
@@ -164,8 +169,8 @@
     <!-- Chatbot Section -->
     <div id="chat-container">
         <h2>Try asking Stu a question!</h2>
-        <input type="text" id="chatInput" placeholder="Type your question...">
-        <button class="send-arrow" onclick="startChat()"></button>
+        <input type="text" id="chatInput" placeholder="Message">
+        <div class="send-arrow" onclick="startChat()">→</div>
         <div id="stuResponse"></div>
     </div>
 
@@ -200,5 +205,11 @@
                 chatInput.value = ''; // Clear the input field
             } else {
                 alert("Please type a question to start the chat!");
-   
+            }
+        }
+    </script>
+
+</body>
+</html>
+
 
