@@ -55,16 +55,15 @@
             50% { transform: translateY(-5px); }
         }
 
-        /* This will ensure the scaling and floating effect works together */
         .floating-scaling {
             position: absolute;
             animation: float 3.3s ease-in-out infinite;
             transition: transform 0.3s ease;
         }
 
-        /* Hover effect for all icons */
-        .floating-scaling:hover, .scaling-icon:hover {
-            transform: scale(1.1); /* Scaling effect */
+        /* Hover effect for floating images */
+        .floating-scaling:hover {
+            transform: scale(1.1) translateY(-5px); /* Apply scale and floating together */
             z-index: 20; /* Make sure the hovered image is above others */
         }
 
