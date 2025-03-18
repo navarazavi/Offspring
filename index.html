@@ -19,17 +19,6 @@
             cursor: url('cur.cur'), auto !important;
         }
 
-        /* General scaling for all images on hover */
-        .scaling-icon, .floating-scaling, .data-icon, .dem-img, .bigb-img, .fertile-img, .floating-icon, .gay-img {
-            transition: transform 0.3s ease;
-        }
-
-        /* Hover effect for specific images */
-        .scaling-icon:hover, .floating-scaling:hover, .data-icon:hover, .dem-img:hover, .bigb-img:hover, .fertile-img:hover, .floating-icon:hover, .gay-img:hover {
-            transform: scale(1.1);
-            z-index: 20; /* Make sure the hovered image is above others */
-        }
-
         /* Title image with scaling effect */
         .title-img {
             width: 100%;
@@ -66,24 +55,32 @@
             50% { transform: translateY(-5px); }
         }
 
+        /* This will ensure the scaling and floating effect works together */
         .floating-scaling {
             position: absolute;
             animation: float 3.3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for all icons */
+        .floating-scaling:hover, .scaling-icon:hover {
+            transform: scale(1.1); /* Scaling effect */
+            z-index: 20; /* Make sure the hovered image is above others */
         }
 
         /* Positioning for images */
-        .data-icon { top: 65%; right: 5.9%; width: 150px;}
-        .dem-img { top: 68%; right: 20.7%; width: 120px;}
-        .scaling-icon { top: 16.7%; left: 9.6%; width: 150px;}
-        .bigb-img { top: 20.5%; left: 24.9%; width: 160px;}
-        .fertile-img { left: 2.7%; top: 34%; width: 9.5%;}
-        .floating-icon { left: 14.5%; top: 70.5%; width: 150px;}
-        .gay-img { top: 39.8%; right: 28.5%; width: 110px;}
+        .data-icon { top: 65%; right: 5.9%; width: 150px; }
+        .dem-img { top: 68%; right: 20.7%; width: 120px; }
+        .scaling-icon { top: 16.7%; left: 9.6%; width: 150px; }
+        .bigb-img { top: 20.5%; left: 24.9%; width: 160px; }
+        .fertile-img { left: 2.7%; top: 34%; width: 9.5%; }
+        .floating-icon { left: 14.5%; top: 70.5%; width: 150px; }
+        .gay-img { top: 39.8%; right: 28.5%; width: 110px; }
 
         /* Footer */
         .footer {
-            position: relative; /* Ensure footer is positioned correctly */
-            margin-top: 20px; /* Space above footer */
+            position: relative;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -96,7 +93,7 @@
     <img src="WatchLeft.png" alt="Watch Left" class="watchleft-img">
     <img src="WatchRight.png" alt="Watch Right" class="watchright-img">
 
-    <!-- Floating Images -->
+    <!-- Floating Images with Hover Scaling -->
     <a href="your-data-page-link" target="_blank">
         <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
     </a>
@@ -111,4 +108,3 @@
     <script src="main/app.js"></script>
 </body>
 </html>
-
