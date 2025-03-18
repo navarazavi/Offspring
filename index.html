@@ -12,14 +12,13 @@
             font-family: "SF Pro Text", sans-serif;
             color: #333;
             background: linear-gradient(to bottom, #ffffff, #f1f1f1);
-            position: relative; /* Ensures the gradient covers the whole page */
+            position: relative;
         }
 
         body {
             cursor: url('cur.cur'), auto !important;
         }
 
-        /* Title image with scaling effect */
         .title-img {
             width: 100%;
             max-width: 700px;
@@ -32,7 +31,6 @@
             transform: scale(1.1);
         }
 
-        /* Fixed images (WatchLeft and WatchRight) - no hover effect */
         .watchleft-img, .watchright-img {
             position: fixed;
             width: 31%;
@@ -49,26 +47,22 @@
             top: 0;
         }
 
-        /* Floating and Scaling Effect for Images */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
 
-        /* This will ensure the scaling and floating effect works together */
         .floating-scaling {
             position: absolute;
             animation: float 3.3s ease-in-out infinite;
             transition: transform 0.3s ease;
         }
 
-        /* Hover effect for floating images */
         .floating-scaling:hover {
-            transform: scale(1.1) translateY(-5px); /* Apply scale and floating together */
-            z-index: 20; /* Make sure the hovered image is above others */
+            transform: scale(1.1) translateY(-5px);
+            z-index: 20;
         }
 
-        /* Positioning for images */
         .data-icon { top: 65%; right: 5.9%; width: 150px;}
         .dem-img { top: 68%; right: 20.7%; width: 120px;}
         .scaling-icon { top: 16.7%; left: 9.6%; width: 150px;}
@@ -77,42 +71,55 @@
         .floating-icon { left: 14.5%; top: 70.5%; width: 150px;}
         .gay-img { top: 39.8%; right: 28.5%; width: 110px;}
 
-        /* Footer */
         .footer {
             position: relative;
             margin-top: 20px;
         }
 
-        /* Lightbox container */
-        .lightbox {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Chatbot container */
+        #chat-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        #chat-container input[type="text"] {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
+            padding: 12px;
+            border-radius: 25px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
 
-        .lightbox img {
-            width: 80%;
-            max-width: 800px;
-            border: 5px solid #fff;
-        }
-
-        /* Close button */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
-            background-color: transparent;
+        #chat-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            font-size: 1rem;
             border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #chat-container button:hover {
+            background-color: #006bb3;
+        }
+
+        #stuResponse {
+            margin-top: 20px;
+            font-family: 'Fira Code', monospace;
+            color: slategray;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
         }
     </style>
 </head>
@@ -127,40 +134,59 @@
 
     <!-- Floating Images with Hover Scaling -->
     <a href="your-data-page-link" target="_blank">
-        <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling" onclick="openLightbox(this)">
+        <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
     </a>
-    <img src="Dem.png" alt="Dem" class="dem-img floating-scaling" onclick="openLightbox(this)">
-    <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling" onclick="openLightbox(this)">
-    <img src="gay.png" alt="Gay" class="gay-img floating-scaling" onclick="openLightbox(this)">
+    <img src="Dem.png" alt="Dem" class="dem-img floating-scaling">
+    <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling">
+    <img src="gay.png" alt="Gay" class="gay-img floating-scaling">
     <a href="chatbot.html">
-        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling" onclick="openLightbox(this)">
+        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling">
     </a>
-    <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling" onclick="openLightbox(this)">
+    <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
-    <!-- Lightbox Container -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-btn">&times;</span>
-        <img id="lightbox-img" src="" alt="Large Image">
+    <!-- Chatbot Section -->
+    <div id="chat-container">
+        <h2>Chat with Stu</h2>
+        <input type="text" id="chatInput" placeholder="Type your question...">
+        <button onclick="startChat()">Send</button>
+        <div id="stuResponse"></div>
     </div>
 
     <script>
-        function openLightbox(img) {
-            // Get the lightbox container and the image element
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
+        // Function to start chat
+        function startChat() {
+            const chatInput = document.getElementById('chatInput');
+            const stuResponse = document.getElementById('stuResponse');
 
-            // Set the image source of the lightbox to the clicked image's source
-            lightboxImg.src = img.src;
+            if (chatInput.value.trim()) {
+                stuResponse.innerHTML = "Stu: Loading..."; // Placeholder for response
 
-            // Show the lightbox
-            lightbox.style.display = 'flex';
-        }
+                // Send request to backend
+                fetch('https://offspring-backend.onrender.com/ask_stu', {  // Your backend URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: chatInput.value })  // Send the user input
+                })
+                .then(response => response.json())
+                .then(data => {
+                    stuResponse.innerHTML = `Stu: ${data.response}`;  // Display the response
+                    stuResponse.style.display = 'block';  // Show the response
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    stuResponse.innerHTML = "Stu: Oops, something went wrong. Try again later.";
+                    stuResponse.style.display = 'block';  // Show error response
+                });
 
-        function closeLightbox() {
-            // Close the lightbox by hiding it
-            document.getElementById('lightbox').style.display = 'none';
+                chatInput.value = ''; // Clear the input field
+            } else {
+                alert("Please type a question to start the chat!");
+            }
         }
     </script>
 
 </body>
 </html>
+
