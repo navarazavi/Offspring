@@ -1,6 +1,6 @@
 Flask
-gunicorn>=20.1.0
+gunicorn
 flask-cors
-python-dotenv
 transformers
-datasets
+torch
+python-dotenv
