@@ -1,5 +1,11 @@
+import sys
+import os
+
+# Add the current directory to sys.path to ensure Python can find 'stu.py'
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 from flask import Flask, request, jsonify
-from stu import StuTheStork  # Import your StuTheStork class from stu.py
+from stu import StuTheStork  # Now it should work
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -22,3 +28,4 @@ def ask_stu():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
+
