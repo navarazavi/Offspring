@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
             padding: 20px;
-            font-family: "SF Pro Text", sans-serif;
+            font-family: "SF Pro Text", sans-serif; /* Default for the whole site */
             color: #333;
             background: linear-gradient(to bottom, #ffffff, #f1f1f1);
             position: relative;
@@ -63,56 +63,51 @@
             z-index: 20;
         }
 
-        .data-icon { top: 65%; right: 5.9%; width: 150px;}
-        .dem-img { top: 68%; right: 20.7%; width: 120px;}
-        .scaling-icon { top: 16.7%; left: 9.6%; width: 150px;}
-        .bigb-img { top: 20.5%; left: 24.9%; width: 160px;}
-        .fertile-img { left: 2.7%; top: 34%; width: 9.5%;}
-        .floating-icon { left: 14.5%; top: 70.5%; width: 150px;}
-        .gay-img { top: 39.8%; right: 28.5%; width: 110px;}
-
-        .footer {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        /* 🌟 RETRO MAC CHATBOX STYLING 🌟 */
+        /* 🌟 Chatbot Styling (Fira Code ONLY) 🌟 */
         #chat-container {
             width: 400px;
-            background: #c0c0c0; /* Classic Mac grey */
-            border: 3px solid #808080; /* Beveled border */
+            background: #c0c0c0;
+            border: 3px solid #808080;
             padding: 10px;
-            font-family: 'Chicago', 'Geneva', 'Monaco', sans-serif; /* Retro Mac fonts */
+            font-family: "Fira Code", monospace; /* Chatbot gets Fira Code */
             font-size: 14px;
-            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000; /* Beveled effect */
-            text-align: center;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
+            text-align: left;
             margin: 20px auto;
         }
 
         #chat-container h2 {
-            background: #000;
-            color: #fff;
-            padding: 5px;
-            font-weight: bold;
-            text-align: center;
             font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        /* Input and Arrow in a Flexbox */
+        .chat-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         #chatInput {
-            width: 80%;
+            flex-grow: 1;
             padding: 5px;
             background: #fff;
             border: 2px solid #808080;
-            font-family: 'Chicago', 'Geneva', sans-serif;
+            font-family: "Fira Code", monospace;
             font-size: 12px;
             box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
         }
 
         .send-arrow {
+            width: 24px;
+            height: 24px;
             background: #c0c0c0;
             border: 2px solid #808080;
-            padding: 5px;
-            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #000;
         }
@@ -122,9 +117,9 @@
         }
 
         #stuResponse {
-            margin-top: 20px;
-            font-family: 'Chicago', 'Geneva', 'Monaco', sans-serif;
-            color: #000; /* Classic Mac system text color */
+            margin-top: 10px;
+            font-family: "Fira Code", monospace;
+            color: #000;
             background-color: #fff;
             padding: 10px;
             border: 2px solid #808080;
@@ -154,11 +149,13 @@
     </a>
     <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
-    <!-- 🌟 Retro Mac Chatbot Section 🌟 -->
+    <!-- 🌟 Chatbot (Now Perfectly Styled) 🌟 -->
     <div id="chat-container">
         <h2>Try asking Stu a question!</h2>
-        <input type="text" id="chatInput" placeholder="Message">
-        <div class="send-arrow" onclick="startChat()">→</div>
+        <div class="chat-input-wrapper">
+            <input type="text" id="chatInput" placeholder="Message">
+            <div class="send-arrow" onclick="startChat()">→</div>
+        </div>
         <div id="stuResponse"></div>
     </div>
 
@@ -169,7 +166,7 @@
             const stuResponse = document.getElementById('stuResponse');
 
             if (chatInput.value.trim()) {
-                stuResponse.innerHTML = "Stu: Loading..."; // Placeholder for response
+                stuResponse.innerHTML = "Stu: Loading..."; 
 
                 // Send request to backend
                 fetch('https://offspring-backend.onrender.com/ask_stu', {  
