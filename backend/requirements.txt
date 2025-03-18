@@ -1,6 +1,6 @@
-Flask
+torch
+transformers
+flask
 gunicorn
 flask-cors
-transformers
-torch
 python-dotenv
