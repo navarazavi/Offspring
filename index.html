@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offspring – Fertile AI</title>
     <style>
-        
-       html, body {
+        html, body {
             height: 100%;
             margin: 0;
             padding: 20px;
@@ -81,11 +80,11 @@
         #chat-container {
             margin-top: 20px;
             padding: 20px;
-            background-color: white; /* Set to white for clean look */
+            background-color: transparent;
             width: 350px;
             margin: 20px auto;
-            border: 2px solid black; /* Thin black border */
-            text-align: left; /* Align text to the left */
+            border: 1px solid black; /* Thin black border */
+            text-align: center;
             position: relative;
         }
 
@@ -96,9 +95,9 @@
             font-family: 'Fira Code', monospace;
         }
 
-        /* Message input area */
+        /* Message input area with Fira Code font */
         #chat-container input[type="text"] {
-            width: calc(100% - 40px); /* Adjust width for send arrow */
+            width: 80%;
             padding: 12px;
             border: 1px solid black; /* Thin black border */
             margin-bottom: 10px;
@@ -112,22 +111,105 @@
             line-height: 1.2; /* Slightly better text alignment */
         }
 
-        /* Send arrow */
+        /* Send arrow inside the input area */
         #chat-container .send-arrow {
             width: 30px;
             height: 30px;
             background-color: transparent;
-            border: none; /* No border */
+            border: 1px solid black; /* Thin black border */
+            transform: rotate(45deg); /* Arrow shape */
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg); /* Center vertically */
             cursor: pointer;
-            display: inline-block; /* Align with input */
+            transition: background-color 0.3s;
             font-family: 'Fira Code', monospace;
             font-size: 1.5rem;
-            line-height: 1.2; /* Center vertically */
-            vertical-align: middle; /* Aligns with text in input */
+        }
+
+        #chat-container .send-arrow:hover {
+            background-color: #f1f1f1;
         }
 
         /* Stu's response display */
         #stuResponse {
             margin-top: 20px;
             font-family: 'Fira Code', monospace;
+            color: darkgrey; /* Lighter color for the response */
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            border: 1px solid black; /* Thin black border */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Image -->
+    <img src="titleOffS.png" alt="Offspring Title" class="title-img">
+
+    <!-- Fixed Images (No Hover for these) -->
+    <img src="WatchLeft.png" alt="Watch Left" class="watchleft-img">
+    <img src="WatchRight.png" alt="Watch Right" class="watchright-img">
+
+    <!-- Floating Images with Hover Scaling -->
+    <a href="your-data-page-link" target="_blank">
+        <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
+    </a>
+    <img src="Dem.png" alt="Dem" class="dem-img floating-scaling">
+    <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling">
+    <img src="gay.png" alt="Gay" class="gay-img floating-scaling">
+    <a href="chatbot.html">
+        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling">
+    </a>
+    <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
+
+    <!-- Chatbot Section -->
+    <div id="chat-container">
+        <h2>Try asking Stu a question!</h2>
+        <input type="text" id="chatInput" placeholder="Message">
+        <div class="send-arrow" onclick="startChat()">→</div>
+        <div id="stuResponse"></div>
+    </div>
+
+    <script>
+        // Function to start chat
+        function startChat() {
+            const chatInput = document.getElementById('chatInput');
+            const stuResponse = document.getElementById('stuResponse');
+
+            if (chatInput.value.trim()) {
+                stuResponse.innerHTML = "Stu: Loading..."; // Placeholder for response
+
+                // Send request to backend
+                fetch('https://offspring-backend.onrender.com/ask_stu', {  // Your backend URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: chatInput.value })  // Send the user input
+                })
+                .then(response => response.json())
+                .then(data => {
+                    stuResponse.innerHTML = `Stu: ${data.response}`;  // Display the response
+                    stuResponse.style.display = 'block';  // Show the response
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    stuResponse.innerHTML = "Stu: Oops, something went wrong. Try again later.";
+                    stuResponse.style.display = 'block';  // Show error response
+                });
+
+                chatInput.value = ''; // Clear the input field
+            } else {
+                alert("Please type a question to start the chat!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
 
