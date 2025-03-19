@@ -1,7 +1,7 @@
 #Offspring-
 
 
-# Offspring: Intelligent Fertility Insights for Apple Health
+# Offspring: Fertile AI 
 
 ![Offspring Mockup](https://github.com/your-username/offspring-fertility/blob/main/image.png)
 
@@ -17,20 +17,6 @@ Offspring enhances fertility tracking by utilizing Apple Watch biometrics, machi
 - **LGBTQ+ and medical condition inclusivity** for a more comprehensive fertility model.  
 - **Apple Watch & iPhone integration**, reducing reliance on manual input and increasing accuracy.
 
-## Competitive Analysis  
-
-| Feature                                 | Offspring | Apple Health | Flo | Clue | Natural Cycles |
-|----------------------------------------|-----------|--------------|-----|------|---------------|
-| AI-Powered Fertility Predictions      | ✅ | ❌ | ❌ | ❌ | ✅ |
-| Apple Watch Biometric Integration     | ✅ | ✅ | ❌ | ❌ | ❌ |
-| LGBTQ+ & PCOS-Inclusive Tracking      | ✅ | ❌ | ✅ | ✅ | ❌ |
-| FDA Clearance for Fertility Use        | 🔄 (Potential) | ❌ | ❌ | ❌ | ✅ |
-| Seamless Apple Ecosystem Sync         | ✅ | ✅ | ❌ | ❌ | ❌ |
-
-## Why Apple?  
-- **Wearables Leadership** – Apple Watch already collects heart rate variability, body temperature, and cycle tracking data, making it the ideal hardware for precision fertility tracking.  
-- **Apple Health Synergy** – Offspring would naturally integrate with Apple Health, elevating its reproductive health offerings.  
-- **Data Privacy & Security** – Apple’s commitment to user privacy sets it apart from third-party fertility apps that monetize sensitive health data.  
 
 ## Future Potential  
 - Expansion into **AI-powered pregnancy tracking** and **hormonal health insights.**  
