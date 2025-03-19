@@ -54,6 +54,14 @@ class StuTheStork:
         elif any(word in user_input_lower for word in ["joke", "funny", "laugh", "humor"]):
             return random.choice(self.responses["funny"])
 
+        # Add Stu's favorite song response
+        if "favorite song" in user_input_lower:
+            return "Stu's favorite song? It's 'Once in a Lifetime' by Talking Heads! A classic! 🎶"
+
+        # Add Stu's zodiac sign response
+        if "zodiac" in user_input_lower or "sign" in user_input_lower:
+            return "I'm a triple Pisces. Do you have a box of tissues? I'm getting emotional 😢"
+
         # Check if it matches any specific fertility-related questions
         for response in self.responses["general_fertility_questions"]:
             if user_input_lower in response["question"].lower():
@@ -61,3 +69,4 @@ class StuTheStork:
 
         # Default response if no match found
         return "I’m not sure about that, but I’m here to help with fertility insights. Let’s track your journey together!"
+
