@@ -5,88 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data & Analytics – Offspring</title>
     <style>
-        body {
-            font-family: "SF Pro Text", sans-serif;
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 20px;
+            font-family: "SF Pro Text", sans-serif;
+            color: #333;
             background: linear-gradient(to bottom, #ffffff, #f1f1f1);
-            color: #333;
+            position: relative;
         }
-        h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #1a73e8;
-            margin-bottom: 20px;
+
+        body {
+            cursor: url('cur.cur'), auto !important;
         }
-        h2 {
-            font-size: 1.8rem;
-            color: #333;
-        }
-        .content-section {
-            margin: 30px 0;
-        }
-        .content-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555;
-        }
-        .chart-container {
+
+        .title-img {
             width: 100%;
-            text-align: center;
+            max-width: 300px;
+            margin: 0;
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #888;
+
+        .data-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 🌟 Mobile Optimization */
+        @media screen and (max-width: 768px) {
+            .title-img {
+                max-width: 80%;
+            }
+
+            .data-title {
+                font-size: 1.5rem;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Data & Analytics Insights</h1>
+    <!-- Title Image (top left) -->
+    <img src="titleOffS.png" alt="Offspring Title" class="title-img">
 
-    <div class="content-section">
-        <h2>Fertility Tracking Data</h2>
-        <p>Our fertility tracking data is collected from a range of diverse users, helping us understand trends, challenges, and opportunities for improvement in reproductive health. The following sections detail key insights gathered:</p>
-        
-        <p><strong>Key Insights:</strong></p>
-        <ul>
-            <li>Data shows a steady rise in late pregnancies, especially among women aged 35 and older.</li>
-            <li>Male fertility rates are increasingly becoming a focus, with growing awareness around sperm health and lifestyle factors.</li>
-            <li>There is a notable difference in fertility challenges for LGBTQ+ couples, with more inclusive tools and support needed.</li>
-        </ul>
-    </div>
+    <!-- Data & Analytics Title -->
+    <div class="data-title">Data & Analytics</div>
 
-    <div class="content-section">
-        <h2>Consumer Data Insights</h2>
-        <p>Understanding the behaviors and preferences of those using fertility tracking apps is critical for designing effective products. Our consumer data reveals:</p>
-        
-        <p><strong>Key Consumer Trends:</strong></p>
-        <ul>
-            <li>Users are increasingly looking for personalized insights rather than generic advice.</li>
-            <li>Real-time notifications and AI-powered recommendations are preferred for users tracking their fertility cycles.</li>
-            <li>Accessibility features, such as LGBTQ+ inclusivity, are becoming more important in fertility tracking tools.</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h2>AI & Machine Learning Optimization</h2>
-        <p>AI and machine learning are revolutionizing fertility tracking by helping users make more informed decisions. Here’s how we optimize our AI tools:</p>
-        <ul>
-            <li>We use AI to predict ovulation cycles based on past data and external factors, improving accuracy for users.</li>
-            <li>Machine learning algorithms are used to enhance user experience by predicting health trends and providing tailored recommendations.</li>
-            <li>AI-driven data analysis helps us continuously improve the product and create better insights for our users.</li>
-        </ul>
-    </div>
-
-    <div class="chart-container">
-        <h2>Data Visualization: Fertility Trends</h2>
-        <p><i>Insert charts and graphs to visually present fertility-related data, trends, and AI optimizations here. For example, you can use tools like Google Charts, Chart.js, or embed static images of charts.</i></p>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2025 Offspring – All rights reserved.</p>
+    <!-- Content Section -->
+    <div class="content">
+        <p>Here you can present the insights and analytics related to fertility tracking, consumer data, AI platforms, and more. Provide meaningful data visualizations and explanations about how the data is being used to optimize fertility tracking and the impact it has on real-world applications.</p>
+        <!-- Add your data and analytics content here -->
     </div>
 
 </body>
