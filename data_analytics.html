@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data & Analytics – Offspring</title>
+    <title>Offspring – Data & Analytics</title>
     <style>
         html, body {
             height: 100%;
-            margin: 15%;
+            margin: 0;
             padding: 20px;
             font-family: "SF Pro Text", sans-serif;
             color: #333;
-            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            background-color: #ffffff; /* Plain white background */
             position: relative;
         }
 
@@ -19,56 +19,82 @@
             cursor: url('cur.cur'), auto !important;
         }
 
-    .title-img {
-        width: 50%;  /* Adjust this to make it larger if needed */
-        margin: 0 auto;  /* This centers the image horizontally */
-        display: block;  /* Makes the image a block-level element so it can be centered */
-        transition: transform 0.3s ease;
-}
+        /* Title Image - Centered */
+        .title-img {
+            width: 50%;
+            max-width: 700px;
+            margin: 0 auto; /* Centers the image horizontally */
+            display: block;
+            transition: transform 0.3s ease;
+            margin-top: 20px; /* Optional space from top */
+        }
 
+        .title-img:hover {
+            transform: scale(1.1);
+        }
 
-        .data-title {
-            font-size: 3rem; /* Make the title larger */
+        /* Data & Analytics Title Styling */
+        h1 {
+            font-size: 36px;
             font-weight: bold;
-            color: #000;
-            margin-top: 200px; /* Add space below the title image */
-            text-align: left;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .content {
-            margin-top: 40px;
+        /* Description Box Styling */
+        .description {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* 🌟 Mobile Optimization */
+        /* Floating Images with Hover Scaling */
+        .floating-scaling {
+            position: absolute;
+            animation: float 3.3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* 🌟 Mobile Optimization 🌟 */
         @media screen and (max-width: 768px) {
-            .title-img {
-                max-width: 80%;
+            .floating-scaling {
+                width: 80px;
             }
 
-            .data-title {
-                font-size: 2rem;
-                margin-top: 100px;
+            .title-img {
+                max-width: 90%;
+            }
+
+            .description {
+                width: 90%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Title Image (top left) -->
+    <!-- Title Image -->
     <img src="titleOffS.png" alt="Offspring Title" class="title-img">
 
     <!-- Data & Analytics Title -->
-    <div class="data-title">Data & Analytics</div>
+    <h1>Data & Analytics</h1>
 
-    <!-- Content Section -->
-    <div class="content">
+    <!-- Description Section -->
+    <div class="description">
         <p>Here you can present the insights and analytics related to fertility tracking, consumer data, AI platforms, and more. Provide meaningful data visualizations and explanations about how the data is being used to optimize fertility tracking and the impact it has on real-world applications.</p>
-        <!-- Add your data and analytics content here -->
     </div>
+
+    <!-- Add your data and analytics content here -->
 
 </body>
 </html>
