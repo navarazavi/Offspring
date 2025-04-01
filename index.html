@@ -64,11 +64,11 @@
         }
 
         .data-icon {
-            top: 65%;
-            right: 5.9%;
-            width: 150px;
-            z-index: 9999;
-        }
+        top: 65%;
+        right: 5.9%;
+        width: 150px;
+        z-index: 9999; /* Higher z-index to ensure it stays on top */
+    }
 
         .dem-img { top: 68%; right: 20.7%; width: 150px;}
         .scaling-icon { top: 16.7%; left: 9.6%; width: 150px;}
@@ -147,70 +147,34 @@
         }
 
         /* 🌟 Mobile Optimization - Less Cluttered Layout 🌟 */
-        @media screen and (max-width: 768px) {
-            .title-img {
-                max-width: 90%;
-            }
+@media screen and (max-width: 768px) {
+    /* Shrink Title Image */
+    .title-img {
+        max-width: 90%;
+    }
 
-            .floating-scaling {
-                width: 80px;
-                max-width: 10vw;
-            }
+    /* Reduce Floating Image Sizes */
+    .floating-scaling {
+        width: 80px;
+        max-width: 10vw;
+    }
 
-            #chat-container {
-                width: 90%;
-                max-width: 350px;
-                margin: 20px auto;
-            }
 
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+    /* Center the Chatbox */
+    #chat-container {
+        width: 90%;
+        max-width: 350px;
+        margin: 20px auto;
+    }
 
-        /* Hover Text for Images */
-        .image-container {
-            position: relative;
-            display: inline-block;
-            margin: 10px;
-        }
+    /* Center Main Elements */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
-        .image {
-            width: 200px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .hover-text {
-            visibility: hidden;
-            width: 100%;
-            background-color: #000; /* Change to black for better contrast */
-            color: #fff;  /* White text for better readability */
-            text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: "Courier New", Courier, monospace;
-            font-size: 18px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            border: 2px solid #fff;  /* White border for contrast */
-            box-shadow: 0 0 10px #fff;  /* White glow for effect */
-        }
-
-        .image-container:hover .hover-text {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .image-container:hover .image {
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body>
@@ -222,36 +186,18 @@
     <img src="WatchLeft.png" alt="Watch Left" class="watchleft-img">
     <img src="WatchRight.png" alt="Watch Right" class="watchright-img">
 
-    <!-- Floating Images with Hover Scaling and Hover Text -->
+    <!-- Floating Images with Hover Scaling -->
     <a href="data_analytics.html">
         <img src="DataP.png" alt="Data Page" class="data-icon floating-scaling">
     </a>
     <img src="Dem.png" alt="Dem" class="dem-img floating-scaling">
     <img src="Fertile.png" alt="Fertile" class="fertile-img floating-scaling">
+    <img src="gay.png" alt="Gay" class="gay-img floating-scaling">
     <a href="chatbot.html">
-        <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling" style="z-index: 9999;">
+    <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling" style="z-index: 9999;">
     </a>
 
-    <!-- Hover Text for BigB, Gay, Demi, and Fertile Images -->
-    <div class="image-container">
-        <img src="bigB.png" alt="Pomegranate" class="bigb-img floating-scaling">
-        <div class="hover-text">Pomegranate - Seeds of Fertility</div>
-    </div>
-
-    <div class="image-container">
-        <img src="gay.png" alt="New Beginnings" class="gay-img floating-scaling">
-        <div class="hover-text">New Beginnings</div>
-    </div>
-
-    <div class="image-container">
-        <img src="demi.png" alt="Aphrodite" class="dem-img floating-scaling">
-        <div class="hover-text">Aphrodite - Goddess of Fertility</div>
-    </div>
-
-    <div class="image-container">
-        <img src="Fertile.png" alt="Female Fertility" class="fertile-img floating-scaling">
-        <div class="hover-text">Female Fertility in Iran, Nashipur - 5000 BCE</div>
-    </div>
+    <img src="bigB.png" alt="BigB" class="bigb-img floating-scaling">
 
     <!-- 🌟 Chatbot Section (Perfected) 🌟 -->
     <div id="chat-container">
@@ -282,7 +228,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    stuResponse.innerHTML = `Stu: ${data.response}`;
+                    stuResponse.innerHTML = Stu: ${data.response};
                     stuResponse.style.display = 'block';
                 })
                 .catch((error) => {
@@ -300,7 +246,3 @@
 
 </body>
 </html>
-
-
-
-
