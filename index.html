@@ -67,7 +67,7 @@
             top: 65%;
             right: 5.9%;
             width: 150px;
-            z-index: 9999; /* Higher z-index to ensure it stays on top */
+            z-index: 9999;
         }
 
         .dem-img { top: 68%; right: 20.7%; width: 150px;}
@@ -148,25 +148,21 @@
 
         /* 🌟 Mobile Optimization - Less Cluttered Layout 🌟 */
         @media screen and (max-width: 768px) {
-            /* Shrink Title Image */
             .title-img {
                 max-width: 90%;
             }
 
-            /* Reduce Floating Image Sizes */
             .floating-scaling {
                 width: 80px;
                 max-width: 10vw;
             }
 
-            /* Center the Chatbox */
             #chat-container {
                 width: 90%;
                 max-width: 350px;
                 margin: 20px auto;
             }
 
-            /* Center Main Elements */
             body {
                 display: flex;
                 flex-direction: column;
@@ -178,7 +174,7 @@
         .image-container {
             position: relative;
             display: inline-block;
-            margin: 10px; /* Optional: Add spacing between images */
+            margin: 10px;
         }
 
         .image {
@@ -190,8 +186,8 @@
         .hover-text {
             visibility: hidden;
             width: 100%;
-            background-color: #1d1f21;
-            color: #00ff00;
+            background-color: #000; /* Change to black for better contrast */
+            color: #fff;  /* White text for better readability */
             text-align: center;
             padding: 10px;
             border-radius: 5px;
@@ -203,8 +199,8 @@
             font-size: 18px;
             opacity: 0;
             transition: opacity 0.3s ease;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 10px #00ff00;
+            border: 2px solid #fff;  /* White border for contrast */
+            box-shadow: 0 0 10px #fff;  /* White glow for effect */
         }
 
         .image-container:hover .hover-text {
@@ -237,7 +233,7 @@
         <img src="AskStu.png" alt="Ask Stu" class="scaling-icon floating-scaling" style="z-index: 9999;">
     </a>
 
-    <!-- Hover Text for Images -->
+    <!-- Hover Text for BigB, Gay, Demi, and Fertile Images -->
     <div class="image-container">
         <img src="bigB.png" alt="Pomegranate" class="bigb-img floating-scaling">
         <div class="hover-text">Pomegranate - Seeds of Fertility</div>
@@ -305,6 +301,7 @@
 
 </body>
 </html>
+
 
 
 
